@@ -1,0 +1,158 @@
+/* Color Palette & Base Theme */
+:root {
+    --primary-blue: #1e5b9f;
+    --primary-blue-hover: #16467d;
+    --text-dark: #202b3c;
+    --text-muted: #64748b;
+    --bg-light: #f8fafc;
+    --border-color: #e2e8f0;
+}
+
+body {
+    background-color: var(--bg-light) !important;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--text-dark);
+}
+
+.blue-header {
+    background-color: var(--primary-blue);
+}
+
+.text-primary {
+    color: var(--primary-blue) !important;
+}
+
+.bg-light {
+    background-color: var(--bg-light) !important;
+}
+
+/* Typography elements */
+h1, h2, h3, h4, h5 {
+    color: var(--text-dark);
+    letter-spacing: -0.02em;
+}
+
+/* Custom Table */
+.custom-table {
+    --bs-table-hover-bg: #f1f5f9;
+}
+
+.table-blue {
+    background-color: var(--primary-blue);
+    color: white;
+}
+.table-blue th {
+    background-color: var(--primary-blue) !important;
+    color: white !important;
+    font-weight: 500;
+    padding: 1rem;
+    border-bottom: none;
+}
+
+.custom-table tbody tr {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.custom-table tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+    color: var(--text-muted);
+    border-color: var(--border-color);
+}
+
+.custom-table tbody td:nth-child(2) {
+    color: var(--primary-blue);
+    font-weight: 500;
+}
+
+.custom-table tbody tr:hover td {
+    background-color: #f0f7ff;
+    color: var(--primary-blue-hover);
+}
+
+/* Search input */
+.search-container {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+}
+
+.search-container input:focus, .search-container input {
+    box-shadow: none !important;
+}
+
+.search-container .input-group-text, .search-container input {
+    border-color: var(--border-color);
+}
+.search-container input:focus {
+    border-color: var(--border-color); /* Prevent outline to keep seamless look */
+}
+
+/* Buttons */
+.btn-outline-primary {
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    box-shadow: 0 4px 6px -1px rgba(30, 91, 159, 0.2);
+}
+
+/* Cards & Shadows */
+.card {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025) !important;
+}
+
+/* Gallery Placeholders */
+.gallery-img-box {
+    aspect-ratio: 16/9;
+    border: 2px dashed #cbd5e1;
+    transition: all 0.3s ease;
+}
+
+.gallery-img-box:hover {
+    background-color: #f1f5f9 !important;
+    border-color: var(--primary-blue);
+    color: var(--primary-blue) !important;
+}
+.gallery-img-box i {
+    color: #94a3b8;
+}
+.gallery-img-box:hover i {
+    color: var(--primary-blue) !important;
+}
+
+/* Lists */
+.procedure-list li {
+    margin-bottom: 0.75rem;
+    padding-left: 0.25rem;
+}
+.procedure-list li::marker {
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.materials-list li {
+    margin-bottom: 0.5rem;
+}
+
+.material-card {
+    background: linear-gradient(145deg, #f8fafc, #f1f5f9) !important;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Utility to ensure elements aren't jumping around during transitions */
+.d-none {
+    display: none !important;
+}
