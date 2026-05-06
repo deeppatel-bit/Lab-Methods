@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-light">
+
+<body>
 
     <!-- Header -->
-    <nav class="navbar navbar-dark blue-header shadow-sm">
+    <nav class="navbar navbar-dark glass-nav shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#" onclick="showHome(event)">
                 <i class="fa-solid fa-flask me-2"></i>Lab Testing Methods
@@ -24,100 +28,180 @@
 
     <!-- Main Content Container -->
     <main class="container my-5">
-        
+
         <!-- Home Section -->
         <section id="home-section" class="fade-in">
-            <h1 class="fw-bold mb-2 text-dark">Lab Testing Methods</h1>
-            <p class="text-muted mb-4 fs-5">A digital lab manual for standard testing procedures</p>
+            <div data-aos="fade-down">
+                <h1 class="fw-bold mb-2 text-dark">Lab Testing Methods</h1>
+                <p class="text-muted mb-4 fs-5">A digital lab manual for standard testing procedures</p>
+            </div>
 
-            <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4 p-4 p-md-5 bg-white">
-                <div class="input-group mb-4 search-container">
-                    <span class="input-group-text bg-white border-end-0 text-muted" id="search-addon">
+            <div class="card glass-card rounded-4 overflow-hidden mb-4 p-4 p-md-5" data-aos="fade-up" data-tilt data-tilt-max="1" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.1">
+                <div class="input-group mb-4 search-container p-1">
+                    <span class="input-group-text bg-transparent border-0 text-muted" id="search-addon">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </span>
-                    <input type="text" id="searchInput" class="form-control border-start-0 ps-0 form-control-lg text-secondary" placeholder="Search methods..." aria-label="Search" aria-describedby="search-addon">
+                    <input type="text" id="searchInput"
+                        class="form-control border-0 ps-0 form-control-lg text-secondary"
+                        placeholder="Search methods..." aria-label="Search" aria-describedby="search-addon">
                 </div>
 
-                <div class="table-responsive rounded-3 border">
-                    <table class="table table-hover mb-0 custom-table">
-                        <thead class="table-blue">
-                            <tr>
-                                <th scope="col" width="10%">S.No</th>
-                                <th scope="col">Title</th>
-                            </tr>
-                        </thead>
-                        <tbody id="methodsTableBody">
-                            <!-- Rows will be populated by JS -->
-                        </tbody>
-                    </table>
+                <div class="row justify-content-center px-lg-3" id="methodsGrid" style="row-gap: 3rem;">
+                    <!-- Cards will be injected here by JS -->
                 </div>
             </div>
         </section>
 
         <!-- Method Detail Section -->
         <section id="detail-section" class="d-none fade-in">
-            <button class="btn btn-outline-primary mb-4 back-btn rounded-pill px-4 fw-medium" onclick="showHome(event)">
+            <button class="btn btn-outline-primary mb-4 back-btn rounded-pill px-4 fw-medium" onclick="showHome(event)" data-aos="fade-right">
                 <i class="fa-solid fa-arrow-left me-2"></i> Back to Home
             </button>
-            
-            <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white">
-                <div class="card-header bg-white border-bottom-0 pt-4 pb-0 px-4 px-md-5 mt-2">
-                    <h2 id="methodTitle" class="fw-bold text-dark mb-0">Method Title</h2>
+
+            <div class="card glass-card rounded-4 overflow-hidden mb-5" data-aos="fade-up">
+                <div class="card-header bg-transparent border-bottom-0 pt-4 pb-2 px-4 px-md-5 mt-2">
+                    <h2 id="methodTitle" class="fw-bold text-primary mb-0">Method Title</h2>
                 </div>
-                <div class="card-body p-4 p-md-5 pt-4">
-                    <!-- Image Gallery -->
-                    <div class="row mb-5 g-3" id="imageGallery">
-                        <div class="col-md-4">
-                            <div class="gallery-img-box rounded-3 bg-light d-flex align-items-center justify-content-center text-muted">
-                                <div class="text-center">
-                                    <i class="fa-solid fa-image fa-2x mb-2 d-block mx-auto text-opacity-50"></i>
-                                    <small class="fw-medium text-opacity-50">Image 1</small>
-                                </div>
+                <div class="card-body p-4 p-md-5 pt-2">
+                    
+                    <div class="row g-5 align-items-start">
+                        <!-- Left Image (Metallic Border) -->
+                        <div class="col-lg-5 text-center mb-4 mb-lg-0" data-aos="fade-right">
+                            <div class="detail-img-wrapper mx-auto">
+                                <img id="detailImage" src="" alt="Detail Image">
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="gallery-img-box rounded-3 bg-light d-flex align-items-center justify-content-center text-muted">
-                                <div class="text-center">
-                                    <i class="fa-solid fa-image fa-2x mb-2 d-block mx-auto text-opacity-50"></i>
-                                    <small class="fw-medium text-opacity-50">Image 2</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="gallery-img-box rounded-3 bg-light d-flex align-items-center justify-content-center text-muted">
-                                <div class="text-center">
-                                    <i class="fa-solid fa-image fa-2x mb-2 d-block mx-auto text-opacity-50"></i>
-                                    <small class="fw-medium text-opacity-50">Image 3</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="row g-5">
-                        <div class="col-lg-8">
-                            <h5 class="fw-bold text-primary mb-3">Description</h5>
-                            <p id="methodDescription" class="mb-5 text-secondary lh-lg fs-6"></p>
-
-                            <h5 class="fw-bold text-primary mb-3">Procedure</h5>
-                            <ol id="methodProcedure" class="procedure-list mb-4 text-secondary lh-lg ps-3 fs-6">
-                                <!-- Procedure items -->
-                            </ol>
                         </div>
                         
-                        <div class="col-lg-4">
-                            <div class="bg-light rounded-4 p-4 mb-4 border material-card">
+                        <!-- Right Content Area -->
+                        <div class="col-lg-7" data-aos="fade-left">
+                            
+                            <!-- Accordion wrapper for sections -->
+                            <div class="accordion" id="methodAccordion">
+                                
+                                <!-- Description -->
+                                <div class="accordion-item border-0 shadow-sm" id="descriptionContainer">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDescription" aria-expanded="true">
+                                            <i class="fa-solid fa-align-left me-2"></i> Description & Objective
+                                        </button>
+                                    </h2>
+                                    <div id="collapseDescription" class="accordion-collapse collapse show" data-bs-parent="#methodAccordion">
+                                        <div class="accordion-body text-secondary lh-lg fs-6" id="methodDescription">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Reagents -->
+                                <div class="accordion-item border-0 shadow-sm d-none" id="reagentsContainer">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseReagents" aria-expanded="false">
+                                            <i class="fa-solid fa-vial me-2"></i> Reagents & Preparation
+                                        </button>
+                                    </h2>
+                                    <div id="collapseReagents" class="accordion-collapse collapse" data-bs-parent="#methodAccordion">
+                                        <div class="accordion-body text-secondary" id="methodReagents">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Sample Prep -->
+                                <div class="accordion-item border-0 shadow-sm d-none" id="samplePrepContainer">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSamplePrep" aria-expanded="false">
+                                            <i class="fa-solid fa-mortar-pestle me-2"></i> Sample Preparation
+                                        </button>
+                                    </h2>
+                                    <div id="collapseSamplePrep" class="accordion-collapse collapse" data-bs-parent="#methodAccordion">
+                                        <div class="accordion-body text-secondary">
+                                            <ul id="methodSamplePrep" class="mb-0 lh-lg ps-3 fs-6"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Calibration -->
+                                <div class="accordion-item border-0 shadow-sm d-none" id="calibrationContainer">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCalibration" aria-expanded="false">
+                                            <i class="fa-solid fa-scale-balanced me-2"></i> Calibration
+                                        </button>
+                                    </h2>
+                                    <div id="collapseCalibration" class="accordion-collapse collapse" data-bs-parent="#methodAccordion">
+                                        <div class="accordion-body text-secondary">
+                                            <ul id="methodCalibration" class="mb-0 lh-lg ps-3 fs-6"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Procedure -->
+                                <div class="accordion-item border-0 shadow-sm d-none" id="procedureContainer">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProcedure" aria-expanded="false">
+                                            <i class="fa-solid fa-clipboard-list me-2"></i> Procedure
+                                        </button>
+                                    </h2>
+                                    <div id="collapseProcedure" class="accordion-collapse collapse" data-bs-parent="#methodAccordion">
+                                        <div class="accordion-body text-secondary">
+                                            <ol id="methodProcedure" class="procedure-list mb-0 lh-lg ps-3 fs-6"></ol>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Results -->
+                                <div class="accordion-item border-0 shadow-sm d-none" id="resultsContainer">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseResults" aria-expanded="false">
+                                            <i class="fa-solid fa-chart-bar me-2"></i> Results & Reporting
+                                        </button>
+                                    </h2>
+                                    <div id="collapseResults" class="accordion-collapse collapse" data-bs-parent="#methodAccordion">
+                                        <div class="accordion-body text-secondary" id="methodResults">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Precautions -->
+                                <div class="accordion-item border-0 shadow-sm d-none" id="precautionsContainer">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrecautions" aria-expanded="false">
+                                            <i class="fa-solid fa-triangle-exclamation me-2"></i> Precautions
+                                        </button>
+                                    </h2>
+                                    <div id="collapsePrecautions" class="accordion-collapse collapse" data-bs-parent="#methodAccordion">
+                                        <div class="accordion-body text-secondary" id="methodPrecautions">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- History -->
+                                <div class="accordion-item border-0 shadow-sm d-none" id="historyContainer">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHistory" aria-expanded="false">
+                                            <i class="fa-solid fa-clock-rotate-left me-2"></i> Document History
+                                        </button>
+                                    </h2>
+                                    <div id="collapseHistory" class="accordion-collapse collapse" data-bs-parent="#methodAccordion">
+                                        <div class="accordion-body text-secondary overflow-auto" id="methodHistory">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+                            <div class="mt-4">
+                                <div class="material-card rounded-4 p-4 mb-4" data-tilt data-tilt-max="2" data-tilt-glare data-tilt-max-glare="0.2">
                                 <h5 class="fw-bold text-primary mb-3"><i class="fa-solid fa-flask-vial me-2"></i>Materials Required</h5>
                                 <ul id="methodMaterials" class="materials-list text-secondary mb-0 ps-3">
                                     <!-- Material items -->
                                 </ul>
                             </div>
-                            
-                            <div id="formulaSection" class="bg-light rounded-4 p-4 border mb-4 d-none">
+
+                            <div id="formulaSection" class="material-card rounded-4 p-4 mb-4 d-none" data-tilt data-tilt-max="2" data-tilt-glare data-tilt-max-glare="0.2">
                                 <h5 class="fw-bold text-primary mb-3"><i class="fa-solid fa-calculator me-2"></i>Formula</h5>
                                 <p id="methodFormula" class="mb-0 text-secondary"></p>
                             </div>
-                            
-                            <div id="notesSection" class="alert alert-info rounded-4 border-0 d-none">
+
+                            <div id="notesSection" class="alert alert-info rounded-4 border-0 shadow-sm d-none">
                                 <h5 class="fw-bold text-info-emphasis mb-2"><i class="fa-solid fa-circle-info me-2"></i>Notes</h5>
                                 <p id="methodNotes" class="mb-0 text-info-emphasis"></p>
                             </div>
@@ -129,6 +213,10 @@
 
     </main>
 
+    <!-- Vanilla Tilt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
