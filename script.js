@@ -192,6 +192,7 @@ const methodsData = [
     {
         id: 4,
         title: "Procedure to Find Out the Oil Absorption of Clay",
+        image: "lab img/oil absorption/ABSORPTION LOGO.png",
         description: `<strong>1.0 Objective</strong><br>To lay down the procedure to find out oil absorption of clay.<br><br><strong>2.0 Scope</strong><br>This STP is applicable for determining the oil absorption of clay in QC department .<br><br><strong>3.0 Responsibility</strong><br>&bull; Trained analyst shall be responsible for performing the tests as per the STP.<br>&bull; Authorized QC person shall be responsible for monitoring and proper implementation of this STP.<br>&bull; Head-QC / In-charge person shall be responsible for approval of the STP.<br><br><strong>4.0 Rationale</strong><br>&bull; Definition: The quantity of oil absorbed on the surface of the Calcined Clay sample.<br>&bull; It indicates the surface porosity of the material.`,
         materials: [
             "Glass plate",
