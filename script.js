@@ -192,13 +192,20 @@ const methodsData = [
     {
         id: 4,
         title: "Procedure to Find Out the Oil Absorption of Clay",
-        description: `<strong>1.0 Objective</strong><br>To lay down the procedure to find out oil absorption of clay.<br><br><strong>2.0 Scope</strong><br>This STP is applicable for determining the oil absorption of clay in QC department of Durga oxides.<br><br><strong>3.0 Responsibility</strong><br>&bull; Trained analyst shall be responsible for performing the tests as per the STP.<br>&bull; Authorized QC person shall be responsible for monitoring and proper implementation of this STP.<br>&bull; Head-QC / In-charge person shall be responsible for approval of the STP.<br><br><strong>4.0 Rationale</strong><br>&bull; Definition: The quantity of oil absorbed on the surface of the Calcined Clay sample.<br>&bull; It indicates the surface porosity of the material.`,
+        description: `<strong>1.0 Objective</strong><br>To lay down the procedure to find out oil absorption of clay.<br><br><strong>2.0 Scope</strong><br>This STP is applicable for determining the oil absorption of clay in QC department .<br><br><strong>3.0 Responsibility</strong><br>&bull; Trained analyst shall be responsible for performing the tests as per the STP.<br>&bull; Authorized QC person shall be responsible for monitoring and proper implementation of this STP.<br>&bull; Head-QC / In-charge person shall be responsible for approval of the STP.<br><br><strong>4.0 Rationale</strong><br>&bull; Definition: The quantity of oil absorbed on the surface of the Calcined Clay sample.<br>&bull; It indicates the surface porosity of the material.`,
         materials: [
             "Glass plate",
             "Aluminum or Stainless Steel spatula (Uniform and flexible)",
             "Glass beaker",
             "Dropper",
             "Raw Linseed Oil"
+        ],
+        materialImages: [
+            "lab img/oil absorption/glass .png",
+            "lab img/oil absorption/spatula.png",
+            "lab img/oil absorption/oil btl.png",
+            "lab img/oil absorption/dropper.png",
+            "lab img/oil absorption/lineseed.png"
         ],
         reagents: "Not applicable.",
         samplePreparation: [],
@@ -469,8 +476,8 @@ function renderGrid(data) {
         col.className = 'col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-4';
         col.setAttribute('data-aos', 'zoom-in');
 
-        // Use abstract images based on ID to simulate materials
-        const imageUrl = `https://picsum.photos/seed/labtest${method.id}/400/400`;
+        // Use custom image if provided, otherwise fallback to placeholder
+        const imageUrl = method.image || `https://picsum.photos/seed/labtest${method.id}/400/400`;
 
         // Extract plain text from description for preview
         const tempDiv = document.createElement('div');
@@ -512,29 +519,30 @@ function showMethodDetail(id) {
 
     // Title and Category
     document.getElementById('methodTitle').textContent = method.title;
-    
+
     // Abstract an objective for the short description
     let shortDesc = method.description || '';
-    if(shortDesc.includes('<br><br>')) {
+    if (shortDesc.includes('<br><br>')) {
         shortDesc = shortDesc.split('<br><br>')[0]; // Just take the Objective
     } else if (shortDesc.length > 200) {
         shortDesc = shortDesc.substring(0, 200) + '...';
     }
-    
+
     const methodShortDesc = document.getElementById('methodShortDesc');
     if (methodShortDesc) {
         methodShortDesc.innerHTML = shortDesc;
     }
 
-    // Image
+    // Main Image (Circular)
     const detailImage = document.getElementById('detailImage');
     if (detailImage) {
-        detailImage.src = `https://picsum.photos/seed/labtest${method.id}/600/600`;
+        detailImage.src = method.image || `https://picsum.photos/seed/labtest${method.id}/600/600`;
     }
-    
+
+    // Large Image (Rectangular)
     const detailLargeImage = document.getElementById('detailLargeImage');
-    if(detailLargeImage) {
-        detailLargeImage.src = `https://picsum.photos/seed/labtest${method.id}large/800/600`;
+    if (detailLargeImage) {
+        detailLargeImage.src = method.largeImage || `https://picsum.photos/seed/labtest${method.id}large/800/600`;
     }
 
     // Materials (Replacing Features & Benefits)
@@ -542,32 +550,41 @@ function showMethodDetail(id) {
     if (materialsList) {
         materialsList.innerHTML = '';
         if (method.materials && method.materials.length > 0) {
-            method.materials.forEach(material => {
+            method.materials.forEach((material, index) => {
                 const li = document.createElement('li');
-                li.innerHTML = material;
+                li.style.display = 'flex';
+                li.style.alignItems = 'center';
+                li.style.marginBottom = '16px';
+
+                // Using custom image if provided, otherwise placeholder
+                const matImage = (method.materialImages && method.materialImages[index]) ? method.materialImages[index] : `https://picsum.photos/seed/mat${method.id}_${index}/100/100`;
+                li.innerHTML = `
+                    <img src="${matImage}" alt="Material" style="width: 80px; height: 80px; border-radius: 8px; margin-right: 16px; object-fit: contain; border: 1px solid #ddd; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); padding: 4px;">
+                    <span style="font-size: 1rem; color: #444; font-weight: 500;">${material}</span>
+                `;
                 materialsList.appendChild(li);
             });
         } else {
-            materialsList.innerHTML = '<li>Standard lab equipment</li>';
+            materialsList.innerHTML = '<li style="color: #555; font-size: 0.95rem;">Standard lab equipment</li>';
         }
     }
 
     // Construct the Long Description HTML for the bottom section
     let longDescHTML = '';
-    
+
     if (method.description) {
         longDescHTML += `${method.description}<br><br>`;
     }
     if (method.reagents && method.reagents !== "Not applicable.") {
         longDescHTML += `${method.reagents}<br><br>`;
     }
-    
+
     if (method.samplePreparation && method.samplePreparation.length > 0) {
         longDescHTML += `<strong>Sample Preparation:</strong><br><ul style="padding-left:1rem;">`;
         method.samplePreparation.forEach(s => longDescHTML += `<li>${s}</li>`);
         longDescHTML += `</ul><br>`;
     }
-    
+
     if (method.calibration && method.calibration.length > 0) {
         longDescHTML += `<strong>Calibration:</strong><br><ul style="padding-left:1rem;">`;
         method.calibration.forEach(s => longDescHTML += `<li>${s}</li>`);
@@ -579,24 +596,24 @@ function showMethodDetail(id) {
         method.procedure.forEach(s => longDescHTML += `<li>${s}</li>`);
         longDescHTML += `</ol><br>`;
     }
-    
+
     const formulaData = method.formula || method.calculations;
     if (formulaData && formulaData !== "NA" && formulaData !== "Not applicable.") {
         longDescHTML += `${formulaData}<br><br>`;
     }
-    
+
     if (method.results) {
         longDescHTML += `<strong>Results:</strong><br>${method.results}<br><br>`;
     }
-    
+
     if (method.precautions) {
         longDescHTML += `<strong>Precautions:</strong><br>${method.precautions}<br><br>`;
     }
-    
+
     if (method.notes) {
         longDescHTML += `<strong>Notes:</strong><br>${method.notes}<br><br>`;
     }
-    
+
     const historyData = method.documentHistory || method.history;
     if (historyData) {
         longDescHTML += `<strong>Document History:</strong><br><div class="table-responsive mt-2">${historyData}</div><br>`;
