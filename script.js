@@ -510,129 +510,36 @@ function showMethodDetail(id) {
     const method = methodsData.find(m => m.id === id);
     if (!method) return;
 
-    // Title
+    // Title and Category
     document.getElementById('methodTitle').textContent = method.title;
+    
+    // Abstract an objective for the short description
+    let shortDesc = method.description || '';
+    if(shortDesc.includes('<br><br>')) {
+        shortDesc = shortDesc.split('<br><br>')[0]; // Just take the Objective
+    } else if (shortDesc.length > 200) {
+        shortDesc = shortDesc.substring(0, 200) + '...';
+    }
+    
+    const methodShortDesc = document.getElementById('methodShortDesc');
+    if (methodShortDesc) {
+        methodShortDesc.innerHTML = shortDesc;
+    }
 
     // Image
     const detailImage = document.getElementById('detailImage');
     if (detailImage) {
         detailImage.src = `https://picsum.photos/seed/labtest${method.id}/600/600`;
     }
-
-    // Description
-    const descContainer = document.getElementById('descriptionContainer');
-    if (descContainer) {
-        if (method.description) {
-            document.getElementById('methodDescription').innerHTML = method.description;
-            descContainer.classList.remove('d-none');
-        } else {
-            descContainer.classList.add('d-none');
-        }
-    } else {
-        document.getElementById('methodDescription').innerHTML = method.description || '';
+    
+    const detailLargeImage = document.getElementById('detailLargeImage');
+    if(detailLargeImage) {
+        detailLargeImage.src = `https://picsum.photos/seed/labtest${method.id}large/800/600`;
     }
 
-    // Reagents
-    const reagentsContainer = document.getElementById('reagentsContainer');
-    if (reagentsContainer) {
-        if (method.reagents) {
-            document.getElementById('methodReagents').innerHTML = method.reagents;
-            reagentsContainer.classList.remove('d-none');
-        } else {
-            reagentsContainer.classList.add('d-none');
-        }
-    }
-
-    // Sample Prep
-    const samplePrepContainer = document.getElementById('samplePrepContainer');
-    if (samplePrepContainer) {
-        const methodSamplePrep = document.getElementById('methodSamplePrep');
-        methodSamplePrep.innerHTML = '';
-        const samplePrepData = method.samplePreparation || method.samplePrep;
-        if (samplePrepData && samplePrepData.length > 0) {
-            samplePrepData.forEach(step => {
-                const li = document.createElement('li');
-                li.innerHTML = step;
-                methodSamplePrep.appendChild(li);
-            });
-            samplePrepContainer.classList.remove('d-none');
-        } else {
-            samplePrepContainer.classList.add('d-none');
-        }
-    }
-
-    // Calibration
-    const calibrationContainer = document.getElementById('calibrationContainer');
-    if (calibrationContainer) {
-        const methodCalibration = document.getElementById('methodCalibration');
-        methodCalibration.innerHTML = '';
-        if (method.calibration && method.calibration.length > 0) {
-            method.calibration.forEach(step => {
-                const li = document.createElement('li');
-                li.innerHTML = step;
-                methodCalibration.appendChild(li);
-            });
-            calibrationContainer.classList.remove('d-none');
-        } else {
-            calibrationContainer.classList.add('d-none');
-        }
-    }
-
-    // Procedure
-    const procedureContainer = document.getElementById('procedureContainer');
-    const procedureList = document.getElementById('methodProcedure');
-    if (procedureList) {
-        procedureList.innerHTML = '';
-        if (method.procedure && method.procedure.length > 0) {
-            method.procedure.forEach(step => {
-                const li = document.createElement('li');
-                li.innerHTML = step;
-                procedureList.appendChild(li);
-            });
-            if (procedureContainer) procedureContainer.classList.remove('d-none');
-        } else {
-            if (procedureContainer) procedureContainer.classList.add('d-none');
-        }
-    }
-
-    // Results
-    const resultsContainer = document.getElementById('resultsContainer');
-    if (resultsContainer) {
-        if (method.results) {
-            document.getElementById('methodResults').innerHTML = method.results;
-            resultsContainer.classList.remove('d-none');
-        } else {
-            resultsContainer.classList.add('d-none');
-        }
-    }
-
-    // Precautions
-    const precautionsContainer = document.getElementById('precautionsContainer');
-    if (precautionsContainer) {
-        if (method.precautions) {
-            document.getElementById('methodPrecautions').innerHTML = method.precautions;
-            precautionsContainer.classList.remove('d-none');
-        } else {
-            precautionsContainer.classList.add('d-none');
-        }
-    }
-
-    // History
-    const historyContainer = document.getElementById('historyContainer');
-    if (historyContainer) {
-        const historyData = method.documentHistory || method.history;
-        if (historyData) {
-            document.getElementById('methodHistory').innerHTML = historyData;
-            historyContainer.classList.remove('d-none');
-        } else {
-            historyContainer.classList.add('d-none');
-        }
-    }
-
-    // Materials
+    // Materials (Replacing Features & Benefits)
     const materialsList = document.getElementById('methodMaterials');
     if (materialsList) {
-        const materialsCard = materialsList.closest('.material-card');
         materialsList.innerHTML = '';
         if (method.materials && method.materials.length > 0) {
             method.materials.forEach(material => {
@@ -640,40 +547,71 @@ function showMethodDetail(id) {
                 li.innerHTML = material;
                 materialsList.appendChild(li);
             });
-            if (materialsCard) materialsCard.classList.remove('d-none');
         } else {
-            if (materialsCard) materialsCard.classList.add('d-none');
+            materialsList.innerHTML = '<li>Standard lab equipment</li>';
         }
     }
 
-    // Formula Section
-    const formulaSection = document.getElementById('formulaSection');
-    if (formulaSection) {
-        const formulaData = method.formula || method.calculations;
-        if (formulaData) {
-            document.getElementById('methodFormula').innerHTML = formulaData;
-            formulaSection.classList.remove('d-none');
-        } else {
-            formulaSection.classList.add('d-none');
-        }
+    // Construct the Long Description HTML for the bottom section
+    let longDescHTML = '';
+    
+    if (method.description) {
+        longDescHTML += `${method.description}<br><br>`;
+    }
+    if (method.reagents && method.reagents !== "Not applicable.") {
+        longDescHTML += `${method.reagents}<br><br>`;
+    }
+    
+    if (method.samplePreparation && method.samplePreparation.length > 0) {
+        longDescHTML += `<strong>Sample Preparation:</strong><br><ul style="padding-left:1rem;">`;
+        method.samplePreparation.forEach(s => longDescHTML += `<li>${s}</li>`);
+        longDescHTML += `</ul><br>`;
+    }
+    
+    if (method.calibration && method.calibration.length > 0) {
+        longDescHTML += `<strong>Calibration:</strong><br><ul style="padding-left:1rem;">`;
+        method.calibration.forEach(s => longDescHTML += `<li>${s}</li>`);
+        longDescHTML += `</ul><br>`;
     }
 
-    // Notes Section
-    const notesSection = document.getElementById('notesSection');
-    if (notesSection) {
-        if (method.notes) {
-            document.getElementById('methodNotes').innerHTML = method.notes;
-            notesSection.classList.remove('d-none');
-        } else {
-            notesSection.classList.add('d-none');
-        }
+    if (method.procedure && method.procedure.length > 0) {
+        longDescHTML += `<strong>Procedure:</strong><br><ol style="padding-left:1.5rem;">`;
+        method.procedure.forEach(s => longDescHTML += `<li>${s}</li>`);
+        longDescHTML += `</ol><br>`;
+    }
+    
+    const formulaData = method.formula || method.calculations;
+    if (formulaData && formulaData !== "NA" && formulaData !== "Not applicable.") {
+        longDescHTML += `${formulaData}<br><br>`;
+    }
+    
+    if (method.results) {
+        longDescHTML += `<strong>Results:</strong><br>${method.results}<br><br>`;
+    }
+    
+    if (method.precautions) {
+        longDescHTML += `<strong>Precautions:</strong><br>${method.precautions}<br><br>`;
+    }
+    
+    if (method.notes) {
+        longDescHTML += `<strong>Notes:</strong><br>${method.notes}<br><br>`;
+    }
+    
+    const historyData = method.documentHistory || method.history;
+    if (historyData) {
+        longDescHTML += `<strong>Document History:</strong><br><div class="table-responsive mt-2">${historyData}</div><br>`;
+    }
+
+    const methodLongDesc = document.getElementById('methodLongDesc');
+    if (methodLongDesc) {
+        methodLongDesc.innerHTML = longDescHTML;
     }
 
     // Toggle Views
-    homeSection.classList.add('d-none');
-    detailSection.classList.remove('d-none');
+    document.getElementById('home-section').classList.add('d-none');
+    document.getElementById('detail-section').classList.remove('d-none');
     window.scrollTo(0, 0);
 
-    // Refresh AOS for newly displayed elements
+    // Refresh AOS
     setTimeout(() => AOS.refresh(), 50);
 }
