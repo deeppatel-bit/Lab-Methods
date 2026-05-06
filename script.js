@@ -466,7 +466,7 @@ function renderGrid(data) {
 
     data.forEach(method => {
         const col = document.createElement('div');
-        col.className = 'col-6 col-md-4 col-lg-3 text-center mb-4';
+        col.className = 'col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-4';
         col.setAttribute('data-aos', 'zoom-in');
 
         // Use abstract images based on ID to simulate materials

@@ -210,3 +210,10 @@ h1, h2, h3, h4, h5, .title-font {
     to { opacity: 1; transform: translateY(0); }
 }
 .d-none { display: none !important; }
+
+@media (max-width: 576px) {
+    .img-wrapper { width: 160px; height: 160px; border-width: 5px; }
+    .detail-img-wrapper { width: 220px; height: 220px; border-width: 8px; }
+    .method-title { font-size: 1.8rem; }
+    .desc-tab-body { padding: 1.5rem 1rem; }
+}
