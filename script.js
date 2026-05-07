@@ -255,8 +255,22 @@ const methodsData = [
     {
         id: 6,
         title: "Residue",
+        image: "lab img/residue/resuide logo.png",
         description: "Determining the amount of residue retained on a standard sieve.",
-        materials: ["Standard sieve (e.g., 325 mesh)", "Water or solvent", "Beaker", "Drying oven", "Balance"],
+        materials: [
+            "Standard sieve (e.g., 100 To 600 Mesh)",
+            "Beaker",
+            "Hot plate",
+            "Balance 600 Gm",
+            "6kg Balance"
+        ],
+        materialImages: [
+            "lab img/residue/standard seive.png",
+            "lab img/residue/1L bikar.jpeg",
+            "lab img/residue/hotplate.jpeg",
+            "lab img/residue/balance weigh.jpeg",
+            "lab img/residue/6kg balance weigh.png"
+        ],
         procedure: ["Weigh the sample accurately.", "Transfer the sample to the sieve.", "Wash thoroughly with solvent until washings are clear.", "Dry the sieve and retained residue in the oven.", "Weigh the residue."],
         formula: "(Weight of residue / Initial weight of sample) * 100",
         notes: "Do not rub the mesh excessively to avoid damage."
@@ -273,6 +287,7 @@ const methodsData = [
     {
         id: 8,
         title: "LOI",
+        image: "lab img/LOI/loi logo.jpeg",
         description: `<strong>1. Objective</strong><br>To determine the loss on ignition of clay material.<br><br><strong>2. Scope</strong><br>This procedure is applicable to clay products and raw materials in the QC department.<br><br><strong>3. Responsibility</strong><br>&bull; Trained analyst is responsible for performing the test.<br>&bull; Authorized QC personnel ensure proper implementation.<br>&bull; QC Head/In-charge is responsible for approval.<br><br><strong>4. Rationale</strong><br>&bull; Loss on Ignition (LOI) indicates the amount of volatile substances present in the material.<br>&bull; It represents weight loss due to heating at high temperature.<br>&bull; It helps in determining moisture, organic matter, and other volatile components.`,
         materials: [
             "Silica crucible",
@@ -280,6 +295,13 @@ const methodsData = [
             "Weighing balance",
             "Desiccator",
             "Tongs"
+        ],
+        materialImages: [
+            "lab img/LOI/Silica crucible bowl.jpeg",
+            "lab img/LOI/Muffle furnace.jpeg",
+            "lab img/LOI/balance weigh.jpeg",
+            "lab img/LOI/Desiccator.jpeg",
+            "lab img/LOI/tongs.jpeg"
         ],
         reagents: "Not applicable.",
         samplePreparation: [
