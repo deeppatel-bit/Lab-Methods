@@ -3,20 +3,30 @@ const methodsData = [
     {
         id: 1,
         title: "Procedure for Making Paint Drawdown",
+        image: "lab img/Drow Down/Drow Down Logo.png",
         description: `<strong>1.0 Objective</strong><br>To lay down procedure for making Paint Drawdown.<br><br><strong>2.0 Scope</strong><br>This STP is applicable for calcined clay products in QC department of Durga oxides.<br><br><strong>3.0 Responsibility</strong><br>&bull; Trained analyst shall be responsible for performing the tests as per the STP.<br>&bull; Authorized QC person shall be responsible for monitoring and proper implementation of this STP.<br>&bull; Head-QC / In-charge person shall be responsible for approval of the STP.<br><br><strong>4.0 Rationale</strong><br>&bull; Definition: Thin paint film applied on black and white printed sheets.<br>&bull; Paint Drawdown indicates the hiding power of Calcined Clay in the paint formulation.<br>&bull; It also indicates the strength of the color when mixed with calcined clay.`,
         materials: [
             "Mechanical stirrer",
-            "100 mL plastic beaker",
-            "Coating Rod (45 micron)",
-            "Dropper",
+            "250 mL plastic beaker",
+            "Glass Rod ",
+            "Drow Down Ped - Applicator",
             "Spatula",
             "Drawdown Sheet (Black and White background)"
         ],
-        reagents: `<strong>6.0 Reagents</strong><br>&bull; Nitrosol (Powder)<br>&bull; Acrylic Binder (50% Solids)<br>&bull; Lutron 850 (40% Solids)<br>&bull; Stainer (Blue paste)<br><br><strong>7.0 Reagent Preparation</strong><br>Nitrosol Solution:<br>Take 100 g of RO water + 5 g of Lutron 850 + 1 g of Nitrosol Powder.`,
+        materialImages: [
+            "lab img/Drow Down/Mechanical stirrer.jpeg",
+            "lab img/Drow Down/250ml bikar.jpeg",
+            "lab img/Drow Down/Glass Rod.png",
+            "lab img/Drow Down/drow down ped.png",
+            "lab img/Drow Down/spatula.png",
+            "lab img/Drow Down/drow down sheet.png"
+        ],
+        reagents: `<strong>6.0 Reagents</strong><br>&bull; Nitrosol (Powder)<br>&bull; Acrylic Binder (50% Solids)<br>&bull; Lutron 850 (40% Solids)<br>&bull; Stainer (Blue paste)<br><br><strong>7.0 Reagent Preparation</strong><br>Nitrosol Solution:<br>Take 1  Liter of RO water + 10g of Lutron 850 + 1 g of Nitrosol Powder. 
+Mix For 30 Minutes.`,
         samplePreparation: [],
         calibration: [],
         procedure: [
-            "Take 10 g of Calcined Clay + 10 g of Nitrosol Solution + 5 g of Acrylic Binder in a plastic beaker.",
+            "Take 20g of Calcined Clay + 20 g of Nitrosol Solution + 10 g of Acrylic Binder in a 250ML      plastic beaker.",
             "For testing the color strength add 0.8 g of blue pigment along with the above mentioned formulation.",
             "Stir it at medium speed till a uniform thick paste is formed (approximately 3–4 minutes).",
             "Similarly make the thick paste using a calcined clay sample to be compared/master sample.",
@@ -52,21 +62,33 @@ const methodsData = [
     {
         id: 2,
         title: "Procedure for Finding Particles Finer than 2 Micron",
+        image: "lab img/2 MICRON/2 MICRON LOGO.png",
         description: `<strong>1.0 Objective</strong><br>To lay down procedure to find out the percentage of particles that are finer than 2 micron.<br><br><strong>2.0 Scope</strong><br>This STP is applicable for analysis of clay products and raw matrices in QC department of Durga oxides.<br><br><strong>3.0 Responsibility</strong><br>&bull; Trained analyst shall be responsible for performing the tests as per the STP.<br>&bull; Authorized QC person shall be responsible for monitoring and proper implementation of this STP.<br>&bull; Head-QC / In-charge person shall be responsible for approval of the STP.<br><br><strong>4.0 Rationale</strong><br>&bull; Definition: The “Particle Size” is defined as ratio of the weight of particles, having an equivalent spherical diameter smaller than a specified size to the weight of the whole material expressed as percentage measured by the “Anderson” technique.<br>&bull; Finer particles provide better coverage and smooth finish to the paint film.`,
         materials: [
             "Analytical Balance &ndash; accurate to 0.001 g",
             "Ultrasonic processor",
             "Hot Air Oven",
             "Glass cylinder &ndash; Approx. 20 cm height, 5 cm dia and marked at 250 mL",
-            "Room Temperature 25&deg;C",
             "Pipette &ndash; Andersen type 20 mL (2 Way pipette)",
             "China dish or Glass dish",
             "Tilt Pipette 5 mL / Measuring cylinder (10 mL)",
             "Plastic beaker &ndash; 100 mL",
-            "Deflocculated solution",
             "RO Water",
             "Sodium Carbonate",
             "Sodium Hexameta Phosphate"
+        ],
+        materialImages: [
+            "lab img/2 MICRON/Analytical Balance.png",
+            "lab img/2 MICRON/Ultrasonic processor.png",
+            "lab img/2 MICRON/Hot Air Oven.png",
+            "lab img/2 MICRON/Glass cylinder .png",
+            "lab img/2 MICRON/Pipette – Andersen type 20 mL (2 Way pipette).png",
+            "lab img/2 MICRON/China dish or Glass dish.png",
+            "lab img/2 MICRON/Tilt pipet 10ml.png",
+            "lab img/2 MICRON/Plastic beaker – 100 mL.png",
+            "lab img/2 MICRON/RO Water.png",
+            "lab img/2 MICRON/Sodium Carbonate.png",
+            "lab img/2 MICRON/Sodium Hexameta Phosphate.png"
         ],
         reagents: `<strong>6.1 Deflocculated solution (Sodium carbonate 1.0% W/V + Sodium Hexameta Phosphate 0.5% W/V):</strong><br>For 500 mL solution:<br>Take 5 g of Sodium Carbonate and 2.5 g of Sodium Hexameta Phosphate, dissolve it in approximately 300 mL of RO water and make up the final volume to 500 mL.<br><em>(Note: The volume of solution to be prepared can be changed as per the requirement)</em>`,
         samplePreparation: [
@@ -115,6 +137,7 @@ const methodsData = [
     {
         id: 3,
         title: "pH Value of Clay Material",
+        image: "lab img/PH/Ph logo.png",
 
         description: `
     <strong>1. Objective</strong><br>
@@ -138,6 +161,11 @@ const methodsData = [
             "Glass beaker",
             "pH meter (portable)",
             "Stirrer"
+        ],
+        materialImages: [
+            "lab img/PH/250ml glass bikar.png",
+            "lab img/PH/PH meter.png",
+            "lab img/PH/Glass Rod.png"
         ],
 
         reagents: "Not applicable.",
@@ -244,15 +272,6 @@ const methodsData = [
         notes: "<strong>Note:</strong> The end point is reached when exactly enough oil has been incorporated with the Calcined clay to produce very stiff, putty-like paste which does not break or separate & it should not stick to the glass plate."
     },
     {
-        id: 5,
-        title: "Oil Absorption Method 2",
-        description: "Alternative automated or semi-automated method for determining oil absorption.",
-        materials: ["Mixer", "Absorptometer", "Linseed oil", "Sample"],
-        procedure: ["Introduce sample into the mixing chamber.", "Start the mixer.", "Gradually feed oil into the chamber at a constant rate.", "Monitor torque increase.", "Stop when torque reaches a peak."],
-        formula: "",
-        notes: ""
-    },
-    {
         id: 6,
         title: "Residue",
         image: "lab img/residue/resuide logo.png",
@@ -355,7 +374,7 @@ const methodsData = [
         samplePreparation: [],
         calibration: [],
         procedure: [
-            "Take 2 grams of sample in a clean and dry aluminium dish.",
+            "Take 20 grams of sample in a clean and dry aluminium dish.",
             "Spread the material uniformly throughout the dish.",
             "Keep it inside the moisture balance, set the temperature to 120&deg;C.",
             "Press the start button and wait for the alarm."
