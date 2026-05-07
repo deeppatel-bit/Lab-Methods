@@ -219,7 +219,7 @@ Mix For 30 Minutes.`,
     },
     {
         id: 4,
-        title: "Procedure to Find Out the Oil Absorption of Clay",
+        title: "Oil Absorption of Clay",
         image: "lab img/oil absorption/ABSORPTION LOGO.png",
         description: `<strong>1.0 Objective</strong><br>To lay down the procedure to find out oil absorption of clay.<br><br><strong>2.0 Scope</strong><br>This STP is applicable for determining the oil absorption of clay in QC department .<br><br><strong>3.0 Responsibility</strong><br>&bull; Trained analyst shall be responsible for performing the tests as per the STP.<br>&bull; Authorized QC person shall be responsible for monitoring and proper implementation of this STP.<br>&bull; Head-QC / In-charge person shall be responsible for approval of the STP.<br><br><strong>4.0 Rationale</strong><br>&bull; Definition: The quantity of oil absorbed on the surface of the Calcined Clay sample.<br>&bull; It indicates the surface porosity of the material.`,
         materials: [
@@ -363,12 +363,18 @@ Mix For 30 Minutes.`,
     },
     {
         id: 9,
-        title: "Procedure for Determining Moisture Content of Clay",
+        title: "Moisture",
+        image: "lab img/MOISTURE/Moisture Logo.png",
         description: `<strong>1.0 Objective</strong><br>To lay down procedure for determining moisture content of clay.<br><br><strong>2.0 Scope</strong><br>This STP is applicable for clay products and raw matrixes in QC department of Durga oxides.<br><br><strong>3.0 Responsibility</strong><br>&bull; Trained analyst shall be responsible for performing the tests as per the STP.<br>&bull; Authorized QC person shall be responsible for monitoring and proper implementation of this STP.<br>&bull; Head-QC / In-charge person shall be responsible for approval of the STP.<br><br><strong>4.0 Rationale</strong><br>&bull; Definition: The free water available on the surface of the material.<br>&bull; Moisture indicates the hydrophilic/hydrophobic nature of the material.`,
         materials: [
             "China Dish",
             "Hot Air Oven",
             "Micro-Balance"
+        ],
+        materialImages: [
+            "lab img/MOISTURE/China dish .png",
+            "lab img/MOISTURE/Hot Air Oven.png",
+            "lab img/MOISTURE/Micro Balance.png"
         ],
         reagents: "Not applicable.",
         samplePreparation: [],
@@ -379,7 +385,19 @@ Mix For 30 Minutes.`,
             "Keep it inside the moisture balance, set the temperature to 120&deg;C.",
             "Press the start button and wait for the alarm."
         ],
-        formula: `<strong>9.0 Calculations</strong><br><br>NA`,
+        formula: `<strong>9.0 Calculations</strong><br><br>
+        <strong>Formula:</strong><br>
+        Moisture % = [(Initial Weight &minus; Final Weight) / Initial Weight] &times; 100<br><br>
+        <strong>Example Calculation:</strong><br>
+        <strong>Given:</strong><br>
+        &bull; Initial powder weight = 20.00 g<br>
+        &bull; Weight after drying at 120&deg;C = 19.80 g<br><br>
+        <strong>Step 1: Calculate moisture loss</strong><br>
+        20.00 &minus; 19.80 = 0.20 g<br><br>
+        <strong>Step 2: Calculate moisture percentage</strong><br>
+        Moisture % = (0.20 &times; 100) / 20.00 = 1.0%<br><br>
+        <strong>Final Result:</strong><br>
+        Moisture Content = 1.0%`,
         results: "Note down the display reading.",
         precautions: "Not applicable.",
         documentHistory: `
@@ -404,7 +422,7 @@ Mix For 30 Minutes.`,
     },
     {
         id: 10,
-        title: "Procedure for Finding Out the Bulk Density",
+        title: "Bulk Density",
         description: `<strong>1.0 Objective</strong><br>To lay down procedure for finding out the Bulk Density.<br><br><strong>2.0 Scope</strong><br>This STP is applicable for powder clay samples in QC department of Durga oxides.<br><br><strong>3.0 Responsibility</strong><br>&bull; Trained analyst shall be responsible for performing the tests as per the STP.<br>&bull; Authorized QC person shall be responsible for monitoring and proper implementation of this STP.<br>&bull; Head-QC / In-charge person shall be responsible for approval of the STP.<br><br><strong>4.0 Rationale</strong><br>&bull; Bulk density is the combination of material density and the air entrapped inside the powder.<br>&bull; Bulk Density affects the flowability of the clay powder into the calciner during calcination.<br>&bull; It indicates the grindability of the mill.`,
         materials: [
             "Measuring cylinder (100 mL)",
@@ -449,15 +467,6 @@ Mix For 30 Minutes.`,
         procedure: ["Ensure the gauge and scraper are perfectly clean.", "Place a small amount of sample in the deep end of the groove.", "Draw the sample down the length of the gauge with the scraper.", "Immediately view at an angle to the length of the block.", "Note the point where particles first appear in significant numbers."],
         formula: "",
         notes: "Readings must be taken within 10 seconds of draw down."
-    },
-    {
-        id: 12,
-        title: "Hegman Method 2",
-        description: "Alternative fineness of grind assessment using grindometer variants.",
-        materials: ["Grindometer blocks", "Scraper"],
-        procedure: ["Apply sample to block.", "Draw down firmly.", "Observe particle dispersion.", "Record reading based on local standard scale."],
-        formula: "",
-        notes: ""
     },
     {
         id: 13,
