@@ -4,7 +4,7 @@ const methodsData = [
         id: 1,
         title: "Procedure for Making Paint Drawdown",
         image: "lab img/Drow Down/Drow Down Logo.png",
-        description: `<strong>1.0 Objective</strong><br>To lay down procedure for making Paint Drawdown.<br><br><strong>2.0 Scope</strong><br>This STP is applicable for calcined clay products in QC department of Durga oxides.<br><br><strong>3.0 Responsibility</strong><br>&bull; Trained analyst shall be responsible for performing the tests as per the STP.<br>&bull; Authorized QC person shall be responsible for monitoring and proper implementation of this STP.<br>&bull; Head-QC / In-charge person shall be responsible for approval of the STP.<br><br><strong>4.0 Rationale</strong><br>&bull; Definition: Thin paint film applied on black and white printed sheets.<br>&bull; Paint Drawdown indicates the hiding power of Calcined Clay in the paint formulation.<br>&bull; It also indicates the strength of the color when mixed with calcined clay.`,
+        description: `<strong>1.0 Objective</strong><br>To lay down procedure for making Paint Drawdown.<br><br><strong>2.0 Scope</strong><br>This STP is applicable for calcined clay products in QC department.<br><br><strong>3.0 Responsibility</strong><br>&bull; Trained analyst shall be responsible for performing the tests as per the STP.<br>&bull; Authorized QC person shall be responsible for monitoring and proper implementation of this STP.<br>&bull; Head-QC / In-charge person shall be responsible for approval of the STP.<br><br><strong>4.0 Rationale</strong><br>&bull; Definition: Thin paint film applied on black and white printed sheets.<br>&bull; Paint Drawdown indicates the hiding power of Calcined Clay in the paint formulation.<br>&bull; It also indicates the strength of the color when mixed with calcined clay.`,
         materials: [
             "Mechanical stirrer",
             "250 mL plastic beaker",
@@ -63,7 +63,7 @@ Mix For 30 Minutes.`,
         id: 2,
         title: "Procedure for Finding Particles Finer than 2 Micron",
         image: "lab img/2 MICRON/2 MICRON LOGO.png",
-        description: `<strong>1.0 Objective</strong><br>To lay down procedure to find out the percentage of particles that are finer than 2 micron.<br><br><strong>2.0 Scope</strong><br>This STP is applicable for analysis of clay products and raw matrices in QC department of Durga oxides.<br><br><strong>3.0 Responsibility</strong><br>&bull; Trained analyst shall be responsible for performing the tests as per the STP.<br>&bull; Authorized QC person shall be responsible for monitoring and proper implementation of this STP.<br>&bull; Head-QC / In-charge person shall be responsible for approval of the STP.<br><br><strong>4.0 Rationale</strong><br>&bull; Definition: The “Particle Size” is defined as ratio of the weight of particles, having an equivalent spherical diameter smaller than a specified size to the weight of the whole material expressed as percentage measured by the “Anderson” technique.<br>&bull; Finer particles provide better coverage and smooth finish to the paint film.`,
+        description: `<strong>1.0 Objective</strong><br>To lay down procedure to find out the percentage of particles that are finer than 2 micron.<br><br><strong>2.0 Scope</strong><br>This STP is applicable for analysis of clay products and raw matrices in QC department.<br><br><strong>3.0 Responsibility</strong><br>&bull; Trained analyst shall be responsible for performing the tests as per the STP.<br>&bull; Authorized QC person shall be responsible for monitoring and proper implementation of this STP.<br>&bull; Head-QC / In-charge person shall be responsible for approval of the STP.<br><br><strong>4.0 Rationale</strong><br>&bull; Definition: The “Particle Size” is defined as ratio of the weight of particles, having an equivalent spherical diameter smaller than a specified size to the weight of the whole material expressed as percentage measured by the “Anderson” technique.<br>&bull; Finer particles provide better coverage and smooth finish to the paint film.`,
         materials: [
             "Analytical Balance &ndash; accurate to 0.001 g",
             "Ultrasonic processor",
@@ -397,7 +397,7 @@ The flow rate as the number of ml of RO water required for 100 gm of test sample
         id: 9,
         title: "Moisture",
         image: "lab img/MOISTURE/Moisture Logo.png",
-        description: `<strong>1.0 Objective</strong><br>To lay down procedure for determining moisture content of clay.<br><br><strong>2.0 Scope</strong><br>This STP is applicable for clay products and raw matrixes in QC department of Durga oxides.<br><br><strong>3.0 Responsibility</strong><br>&bull; Trained analyst shall be responsible for performing the tests as per the STP.<br>&bull; Authorized QC person shall be responsible for monitoring and proper implementation of this STP.<br>&bull; Head-QC / In-charge person shall be responsible for approval of the STP.<br><br><strong>4.0 Rationale</strong><br>&bull; Definition: The free water available on the surface of the material.<br>&bull; Moisture indicates the hydrophilic/hydrophobic nature of the material.`,
+        description: `<strong>1.0 Objective</strong><br>To lay down procedure for determining moisture content of clay.<br><br><strong>2.0 Scope</strong><br>This STP is applicable for clay products and raw matrixes in QC department.<br><br><strong>3.0 Responsibility</strong><br>&bull; Trained analyst shall be responsible for performing the tests as per the STP.<br>&bull; Authorized QC person shall be responsible for monitoring and proper implementation of this STP.<br>&bull; Head-QC / In-charge person shall be responsible for approval of the STP.<br><br><strong>4.0 Rationale</strong><br>&bull; Definition: The free water available on the surface of the material.<br>&bull; Moisture indicates the hydrophilic/hydrophobic nature of the material.`,
         materials: [
             "China Dish",
             "Hot Air Oven",
@@ -456,7 +456,39 @@ The flow rate as the number of ml of RO water required for 100 gm of test sample
         id: 10,
         title: "Bulk Density",
         image: "lab img/Bulk density/Bulk density lgog.png",
-        description: `<strong>1.0 Objective</strong><br>To lay down procedure for finding out the Bulk Density.<br><br><strong>2.0 Scope</strong><br>This STP is applicable for powder clay samples in QC department of Durga oxides.<br><br><strong>3.0 Responsibility</strong><br>&bull; Trained analyst shall be responsible for performing the tests as per the STP.<br>&bull; Authorized QC person shall be responsible for monitoring and proper implementation of this STP.<br>&bull; Head-QC / In-charge person shall be responsible for approval of the STP.<br><br><strong>4.0 Rationale</strong><br>&bull; Bulk density is the combination of material density and the air entrapped inside the powder.<br>&bull; Bulk Density affects the flowability of the clay powder into the calciner during calcination.<br>&bull; It indicates the grindability of the mill.`,
+        shortDesc: "Procedure for finding out the Bulk Density.",
+        description: `<strong>English:</strong><br>
+Place the dry measuring cylinder on the weighing balance and TARE it.<br><br>
+Slowly pour the powder through the funnel up to the 100 mL mark on the measuring cylinder.<br><br>
+Note the weight displayed on the weighing balance.<br><br>
+<strong>CALCULATION</strong><br><br>
+<strong>BULK DENSITY (g/100 mL) :-</strong>
+<div style="text-align: center; margin: 15px 0;">
+    Bulk Density = <span style="display: inline-block; vertical-align: middle; text-align: center; font-weight: bold;">
+        <span style="border-bottom: 2px solid #000; padding: 0 5px; display: block;">Weight in grams &times; 100</span>
+        <span style="padding: 0 5px; display: block;">100 mL</span>
+    </span>
+</div>
+<br>
+<strong>Gujarati:</strong><br>
+સૂકા માપન સિલિન્ડરને વજનના કાંટા પર રાખો અને તેને TARE કરો.<br><br>
+માપન સિલિન્ડર પર 100 ML ના ચિન્હ સુધી પાવડરને ફનલ દ્વારા ધીમે ધીમે રેડો.<br><br>
+વજનના કાંટા પર જે વજન દર્શાવે તે નોંધ કરો.<br><br>
+<strong>CALCULATION (ગણતરી)</strong><br><br>
+<strong>BULK DENSITY (g/100 mL) :-</strong>
+<div style="text-align: center; margin: 15px 0;">
+    Bulk Density = <span style="display: inline-block; vertical-align: middle; text-align: center; font-weight: bold;">
+        <span style="border-bottom: 2px solid #000; padding: 0 5px; display: block;">વજન (ગ્રામમાં)</span>
+        <span style="padding: 0 5px; display: block;">100 mL</span>
+    </span>
+</div>
+અથવા
+<div style="text-align: center; margin: 15px 0;">
+    Bulk Density = <span style="display: inline-block; vertical-align: middle; text-align: center; font-weight: bold;">
+        <span style="border-bottom: 2px solid #000; padding: 0 5px; display: block;">વજન (ગ્રામમાં) &times; 100</span>
+        <span style="padding: 0 5px; display: block;">100 mL</span>
+    </span>
+</div>`,
         materials: [
             "Measuring cylinder (100 mL)",
             "Balance (accurate to 0.5 g)"
@@ -465,17 +497,6 @@ The flow rate as the number of ml of RO water required for 100 gm of test sample
             "lab img/Bulk density/Measuring cylinder (100 mL).png",
             "lab img/Bulk density/Balance (accurate to 0.5 g).png"
         ],
-        reagents: "Not applicable.",
-        samplePreparation: [],
-        calibration: [],
-        procedure: [
-            "Keep the dry measuring cylinder on the weighing balance and tare it.",
-            "Pour the clay powder slowly through a funnel till the 100 mL mark on the measuring cylinder.",
-            "Note down the weight displayed on the weighing balance."
-        ],
-        formula: `<strong>9.0 Calculations</strong><br><br>Bulk Density (g/L) = (Weight displayed in gram / 100 mL) &times; 1000 mL`,
-        results: "Report the results in g/mL.",
-        precautions: "Please ensure that there is no spillage on the weighing balance.",
         documentHistory: `
             <table class="table table-bordered mb-0" style="border-collapse: collapse; width: 100%;">
                 <thead class="table-light">
@@ -729,11 +750,6 @@ function showMethodDetail(id, updateHash = true) {
         detailImage.src = method.image || `https://picsum.photos/seed/labtest${method.id}/600/600`;
     }
 
-    // Large Image (Rectangular)
-    const detailLargeImage = document.getElementById('detailLargeImage');
-    if (detailLargeImage) {
-        detailLargeImage.src = method.largeImage || `https://picsum.photos/seed/labtest${method.id}large/800/600`;
-    }
 
     // Materials (Replacing Features & Benefits)
     const materialsList = document.getElementById('methodMaterials');
