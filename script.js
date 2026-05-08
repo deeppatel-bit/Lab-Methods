@@ -297,11 +297,43 @@ Mix For 30 Minutes.`,
     {
         id: 7,
         title: "Flow Point",
-        description: "Testing the temperature or condition at which a substance starts to flow.",
-        materials: ["Heating block", "Thermometer", "Glass capillary tubes"],
-        procedure: ["Pack sample into a capillary tube.", "Place the tube into the heating block.", "Increase temperature gradually.", "Observe the sample closely.", "Record the temperature when the sample visibly begins to flow."],
-        formula: "",
-        notes: "Ensure uniform heating rate."
+        image: "lab img/Flow Point/flow point logo.png",
+        shortDesc: "Testing the temperature or condition at which a substance starts to flow.",
+        description: `<strong>English:</strong><br>
+Weigh 20 grams of the material in a 150 ML glass beaker.<br>
+Add 0.4GM Endophyl 713 and stir well with a glass rod.<br>
+Add distilled water in small portions using a burette, stirring continuously until the free flowing powder turns into a paste. ( It is necessary to stir after every 1ML of water is added.<br>
+To assess the end point, collect the paste on one side of the beaker bottom. And carefully tilt the beaker through an angle of 120-140 degrees (in normal position) to allow the paste to flow down the wall of the beaker.<br>
+( The flow point is said to be reached at the stage point where the paste tends to flow on its own)<br>
+Take a burette reading. (This will give an idea of the approximate burette riding and will help in determining the exact flow point by repeating the same process again)<br>
+Repeat the process from points 9.1 to 9.5 in another beaker and finally add water up to 1 ML<br>
+Then add water in 0.1 ml increments and shake the contents well after each addition to check the flow point<br>
+The flow rate as the number of ml of RO water required for 100 gm of test sample Express the point.<br><br>
+
+<strong>Gujarati:</strong><br>
+150 ML ગ્લાસ બિકરમાં 20ગ્રામ માલ વજન કરો .<br>
+0.4GM એન્ડોફીલ 713 ઉમેરો અને ગ્લાસ રોડ વડે સારી રીતે હલાવો.<br>
+બ્યુરેટનો ઉપયોગ કરીને નિસ્યદિત પાણી દરેક નાના હપ્તામાં ઉમેરો જ્યાં સુધી મુક્ત વહેતા પાવડરને પેસ્ટ સ્વરૂપમાં રૂપાંતરણ ન થાય ત્યાં સુધી સત્તત હલાવતા રહો . ( દરેક 1ML પાણી ઉમેયા પછી હળવું જરૂરી છે.<br>
+અંતિમ બિંદુનું મુલ્યાંકન કરવા માટે બિકાર તળિયે એક બાજુએ પેસ્ટ એકત્રિત કરો. અને બિકારને 120-140 ડિગ્રી ના ખૂણા પાર  (સામાન્ય સ્થિતિ માં ) કાળજીપૂર્વક નમાવો જેથી પેસ્ટને બિકારની દીવાલ પર વહેવા દે .<br>
+( પ્રવાહ પોઈન્ટ એ સ્ટેજ પોઇન્ટ પર પોહચી ગયો હોવાનું કહેવાય છે કે જ્યાં પેસ્ટ પોતાની મેળે વહેવાનું વલણ ધરાવે છે )<br>
+બ્યુરેટ રિડિંગ કરો . (આ અંદાજિત બ્યુરેટ રાઇડિંગ નો ખ્યાલ આપશે અને તે જ પ્રક્રિયા ફરીથી પુનરાવર્તિત કરીને સચોટ પ્રવાહ બિંદુ નક્કી કરવામાં મદદ કરશે )<br>
+બીજી બિકાર માં પોઇન્ટ 9.1 થી 9.5 સૂંધીની પ્રક્રિયાને પુનરાવર્તિત કરો અને છેલ્લે 1 ML  સુધી પાણી ઉમેરો <br>
+પછી થી 0.1 મળ હપ્તા માં પાણી ઉમેરો અને પ્રવાહ બિંદુ તપાસવા મારે દરેક ઉમેરા પછી સામગ્રીને સારી રીતે હલાવો <br>
+100 ગ્રામ ટેસ્ટ સેમ્પલ માટે જરૂરી નીશ્યનદીત પાણી RO પાણીના મીલીની સંખ્યા તરીકે પ્રવાહ બિંદુને વ્યક્ત કરો`,
+        materials: [
+            "150 ml glass bikar",
+            "50ml Burette",
+            "Distilled Water",
+            "Glass rod",
+            "Indofilled 731 (Low Foaming Surfactant)"
+        ],
+        materialImages: [
+            "lab img/Flow Point/150 ml glass bikar.png",
+            "lab img/Flow Point/50ml burette.png",
+            "lab img/Flow Point/distilled water .png",
+            "lab img/Flow Point/glass rod.png",
+            "lab img/Flow Point/indofilled 731 (low foaming surfactant ).png"
+        ]
     },
     {
         id: 8,
@@ -423,10 +455,15 @@ Mix For 30 Minutes.`,
     {
         id: 10,
         title: "Bulk Density",
+        image: "lab img/Bulk density/Bulk density lgog.png",
         description: `<strong>1.0 Objective</strong><br>To lay down procedure for finding out the Bulk Density.<br><br><strong>2.0 Scope</strong><br>This STP is applicable for powder clay samples in QC department of Durga oxides.<br><br><strong>3.0 Responsibility</strong><br>&bull; Trained analyst shall be responsible for performing the tests as per the STP.<br>&bull; Authorized QC person shall be responsible for monitoring and proper implementation of this STP.<br>&bull; Head-QC / In-charge person shall be responsible for approval of the STP.<br><br><strong>4.0 Rationale</strong><br>&bull; Bulk density is the combination of material density and the air entrapped inside the powder.<br>&bull; Bulk Density affects the flowability of the clay powder into the calciner during calcination.<br>&bull; It indicates the grindability of the mill.`,
         materials: [
             "Measuring cylinder (100 mL)",
             "Balance (accurate to 0.5 g)"
+        ],
+        materialImages: [
+            "lab img/Bulk density/Measuring cylinder (100 mL).png",
+            "lab img/Bulk density/Balance (accurate to 0.5 g).png"
         ],
         reagents: "Not applicable.",
         samplePreparation: [],
@@ -461,21 +498,95 @@ Mix For 30 Minutes.`,
     },
     {
         id: 11,
-        title: "Hegman",
-        description: "Determination of fineness of grind using a Hegman gauge.",
-        materials: ["Hegman gauge", "Scraper", "Sample"],
-        procedure: ["Ensure the gauge and scraper are perfectly clean.", "Place a small amount of sample in the deep end of the groove.", "Draw the sample down the length of the gauge with the scraper.", "Immediately view at an angle to the length of the block.", "Note the point where particles first appear in significant numbers."],
-        formula: "",
-        notes: "Readings must be taken within 10 seconds of draw down."
+        title: "Hegement",
+        shortDesc: "Determination of fineness of grind using a Hegement gauge.",
+        image: "lab img/Hegmen/hegement logo.png",
+        description: `<strong>English:</strong><br>First of all, put the paper on the weighing scale and add 0.50 grams of powder and 1.50 grams of chemical (testing varnish) to it. Then mix the powder and chemical with a spatula to make a paste and put it in the Muller Machine and turn it once and then open the Muller Machine and collect it on a glass and turn it in the Muller Machine. After that, put the paste in two different places in the G-3 INK GAGE and pull it out.<br><br><strong>Gujarati:</strong><br>સૌ પ્રથમ વજન કાંટા ઉપર પેપર રાખી ને તેમાં 0.50ગ્રામ પાવડર અને 1.50 કેમિકલ (ટેસ્ટિંગ વાર્નિશ) નાખો. પછી Spatula થી પાવડર અને કેમિકેલ મિક્સ કરી ને પેસ્ટ બનાવી ને Muller Machine માં રાખી ને એક વખત ફેરવી અને પછી Muller Machine ને ખોલીને એક કાચ ઉપર ભેગું કરી ને પાછું Muller Machine માં ફેરવાનું. તે થઈ ગયા પછી તે પેસ્ટ ને G-3 INK GAGE માં બે અલગ અલગ જગ્યા રાખી ને ખેંચી લેવું.`,
+        materials: [
+            "Pigment Muller 92n Motor",
+            "Micro Balance",
+            "Oil Paper",
+            "G-3 Ink Gage",
+            "Spatula",
+            "Testing Varnish"
+        ],
+        materialImages: [
+            "lab img/Hegmen/pigment muller 92n motor.png",
+            "lab img/Hegmen/micro balance.png",
+            "lab img/Hegmen/oil paper.png",
+            "lab img/Hegmen/g-3 ink gage.png",
+            "lab img/Hegmen/spatula.png",
+            "lab img/Hegmen/testing varnish.png"
+        ]
     },
     {
         id: 13,
         title: "Casting Testing",
-        description: "Method for testing casts or molds for durability and defects.",
-        materials: ["Molds", "Casting resin", "Tensile tester"],
-        procedure: ["Prepare the mold with releasing agent.", "Pour the resin and allow to cure completely.", "De-mold the cast carefully.", "Examine for visual defects (bubbles, cracks).", "Perform mechanical testing if required."],
-        formula: "",
-        notes: "Curing times must be strictly adhered to."
+        image: "lab img/Casting/casting logo.png",
+        shortDesc: "Method for testing casts or molds for durability and defects.",
+        description: `<strong>English:</strong><br>
+Take 500ML of the mixture and add 500ML of water to it. Then mix with STIRRER for 10 minutes.<br>
+Weigh the density of the canister in the BALANCE fork.<br>
+Then fill the canister with the material and clean it thoroughly and weigh it.<br>
+After weighing, the density should be 1330. If the density is not 1330, add water by weighing and then mix in STIRRER.<br>
+Then weigh in the same process. Add water until the weight is 1330.<br>
+After the density is 1330, check the viscosity.<br>
+To check the viscosity, mix the sample in a mixer without stirring it.<br>
+Add a teaspoon of SODIUM SILICATE.<br>
+You can read the tip of SODIUM SILICATE 12.<br>
+To check the viscosity, fill the material in the visco cup and keep the visco cup in the visco meter. Turn the visco meter anti-clockwise.<br>
+After turning anti-clockwise, the viscosity should be 355.<br>
+NOTE:- If the viscosity is 355, the material is correct. If the viscosity is not 355, it is not correct.<br>
+Then pass the material through 120 MESH.<br>
+Fill 10 LITER water in a bucket, soak the MOLD in water and dry it for 1 minute. Let the MOLD dry.<br>
+Then fill the material in it and dry the material inside the mold for 10 minutes.<br>
+After 10 minutes, remove the wet material from the mold.<br>
+After removing the wet material from the mold, let the mold dry for 10 minutes. And check the CASTING.<br>
+Result:- After the mold dries, take the material like a cake and measure it with a scale or MM meter.<br>
+CASTING should be 12MM.<br><br>
+
+<strong>Gujarati:</strong><br>
+500ML મા લ બી કર લો એમાં 500ML પા ણી ઉમેર .પછી STIRRER મી 10 મિ નિ ટ મિ ક્સ કરો .<br>
+BALANCE કાં ટા માં ડેન્ડેસી ટી ડબી ની વજન કરો .<br>
+પછી ડબી માં મા લ ભરી ને તેને સા રી રી તે સા ફ કરી ને વજન કરો .<br>
+વજન કા ર્ય પછી ડેન્સિડેન્સિ ટી 1330 આવી જોઈએ . 1330 ડેન્સિડેન્સિ ટી ના આવે તો પા ણી નો વજન કરી ને ઉમેરો પછી STIRRER માં મિ ક્સ કરો . પછી સેમ પ્રો સેસ માં વજન કરો .1330 વજન ના ત્યાં સુધી પા ણી ઉમેરો .<br>
+1330 ડેન્સિડેન્સિ ટી આવિ યા પછી વિ સ્કો સિ ટી ચેક કરો .<br>
+વી સકો સિ ટી ચેક કરવા મા ટે મા લ ને બિ કર માં ના ખી તેને સ્થિ રરર માં મિ ક્સ કરો .<br>
+SODIUM SILICATE ના ટી પા એડ કરો .<br>
+SODIUM SILICATE ના ટી પા 12 ના ખી શકો છો .<br>
+વિ સ્કો સિ ટી ચેક કરવા મા ટે વિ સ્કો કપ માં મા લ ભરી ના ખો અને વિ સ્કો સિ ટી મી ટર ની ચે વિ સ્કો કપ રા ખો વિ સ્કો સિ ટી મી ટર ને એન્ટી કલોક વા ઈઝ ફેરવો .<br>
+એન્ટી કલોક વા ઈઝ ફરા યા પછી વિ સ્કો સિ ટી 355 આવી જાય .<br>
+NOTE :- વિ સ્કો સિ ટી 355 આવી તો મા લ બરો બર છે . વિ સ્કો સિ ટી 355 ના આવે તો બરા બર નથી .<br>
+પછી મા લ 120 MESH માં પા સ કરો .<br>
+એક ડો લ માં 10 LITER પા ણી ભરો એની અંદર MOLD ને પા ણી માં પલાળી ને 1 મિ નિ ટ મા ટે સુકા વા દો. MOLD સુકા વી યાં પછી એની અંદર મા લ ભરી 10 મિ નિ ટ મા લ ને મો લ્ડની અંદર સુકા વા દો .<br>
+10 મિ નિ ટ થયા પછી ભીનો મા લ બહા ર કા ઢી લો .<br>
+ભીના મા લને મો લ્ડની બહા ર કાં ધિ યા પછી 10 મિ નિ ટ મો લ્ડને સુકા વા દેવો . અને CASTING ચેક કરો .<br>
+Result :- મો લ્ડ સુકા યા પછી મા લને કેક ની જેમજે કા પી ને Scale અથવા MM મી ટર થી મા પી લો .<br>
+CASTING 12MM આવી જોઈએ.`,
+        materials: [
+            "1 Liter Beaker",
+            "10 LITER DOL",
+            "120 Mesh",
+            "Balance Meter",
+            "Bowl mold technical illustration",
+            "Density Cylinder Metal Bottle",
+            "MM Meter And Scale",
+            "STIRRER",
+            "Sodium silicate",
+            "VISCOMETER"
+        ],
+        materialImages: [
+            "lab img/Casting/1 Liter Beaker.png",
+            "lab img/Casting/10 LITER DOL.png",
+            "lab img/Casting/120  Mesh.png",
+            "lab img/Casting/Balance Meter.png",
+            "lab img/Casting/Bowl mold technical illustration.png",
+            "lab img/Casting/Density Cylinder Metal Bottle.png",
+            "lab img/Casting/MM Meter And Scale.png",
+            "lab img/Casting/STIRRER.png",
+            "lab img/Casting/Sodium silicate.png",
+            "lab img/Casting/VISCOMETER.png"
+        ]
     }
 ];
 
@@ -485,6 +596,23 @@ const searchInput = document.getElementById('searchInput');
 const homeSection = document.getElementById('home-section');
 const detailSection = document.getElementById('detail-section');
 
+// Routing Logic
+window.addEventListener('hashchange', handleRouting);
+
+function handleRouting() {
+    const hash = window.location.hash;
+    if (hash.startsWith('#method-')) {
+        const id = parseInt(hash.replace('#method-', ''));
+        if (!isNaN(id)) {
+            showMethodDetail(id, false);
+        } else {
+            showHome(null, false);
+        }
+    } else {
+        showHome(null, false);
+    }
+}
+
 // Initialization
 document.addEventListener('DOMContentLoaded', () => {
     AOS.init({
@@ -493,6 +621,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     renderGrid(methodsData);
+    handleRouting(); // Call on initial load to support refreshing on a method page
 
     // Search functionality
     if (searchInput) {
@@ -532,7 +661,7 @@ function renderGrid(data) {
 
         // Extract plain text from description for preview
         const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = method.description || '';
+        tempDiv.innerHTML = method.shortDesc || method.description || '';
         const plainDesc = tempDiv.textContent || tempDiv.innerText || '';
 
         col.innerHTML = `
@@ -555,8 +684,11 @@ function renderGrid(data) {
 }
 
 // Navigation Functions
-function showHome(e) {
+function showHome(e, updateHash = true) {
     if (e) e.preventDefault();
+    if (updateHash) {
+        window.history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
     detailSection.classList.add('d-none');
     homeSection.classList.remove('d-none');
     window.scrollTo(0, 0);
@@ -564,19 +696,26 @@ function showHome(e) {
     setTimeout(() => AOS.refresh(), 50);
 }
 
-function showMethodDetail(id) {
+function showMethodDetail(id, updateHash = true) {
     const method = methodsData.find(m => m.id === id);
     if (!method) return;
+
+    if (updateHash) {
+        window.location.hash = 'method-' + id;
+    }
 
     // Title and Category
     document.getElementById('methodTitle').textContent = method.title;
 
     // Abstract an objective for the short description
-    let shortDesc = method.description || '';
-    if (shortDesc.includes('<br><br>')) {
-        shortDesc = shortDesc.split('<br><br>')[0]; // Just take the Objective
-    } else if (shortDesc.length > 200) {
-        shortDesc = shortDesc.substring(0, 200) + '...';
+    let shortDesc = method.shortDesc;
+    if (!shortDesc) {
+        shortDesc = method.description || '';
+        if (shortDesc.includes('<br><br>')) {
+            shortDesc = shortDesc.split('<br><br>')[0]; // Just take the Objective
+        } else if (shortDesc.length > 200) {
+            shortDesc = shortDesc.substring(0, 200) + '...';
+        }
     }
 
     const methodShortDesc = document.getElementById('methodShortDesc');
