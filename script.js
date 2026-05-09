@@ -545,7 +545,8 @@ Note the weight displayed on the weighing balance.<br><br>
         title: "Casting Testing",
         image: "lab img/Casting/casting logo.png",
         shortDesc: "Method for testing casts or molds for durability and defects.",
-        description: `<strong>English:</strong><br>
+        description: `<h5 class="mt-2 text-primary border-bottom pb-2">Method 1</h5>
+<strong>English:</strong><br>
 Take 500ML of the mixture and add 500ML of water to it. Then mix with STIRRER for 10 minutes.<br>
 Weigh the density of the canister in the BALANCE fork.<br>
 Then fill the canister with the material and clean it thoroughly and weigh it.<br>
@@ -583,7 +584,28 @@ NOTE :- વિ સ્કો સિ ટી 355 આવી તો મા લ બર
 10 મિ નિ ટ થયા પછી ભીનો મા લ બહા ર કા ઢી લો .<br>
 ભીના મા લને મો લ્ડની બહા ર કાં ધિ યા પછી 10 મિ નિ ટ મો લ્ડને સુકા વા દેવો . અને CASTING ચેક કરો .<br>
 Result :- મો લ્ડ સુકા યા પછી મા લને કેક ની જેમજે કા પી ને Scale અથવા MM મી ટર થી મા પી લો .<br>
-CASTING 12MM આવી જોઈએ.`,
+CASTING 12MM આવી જોઈએ.<br><br>
+
+<h5 class="mt-4 text-primary border-bottom pb-2">Method 2</h5>
+<strong>English:</strong><br>
+600 gm material<br>
+Density 1300<br>
+Material is not free flow add sodium silicate<br>
+Sodium silicate drop is 12 maximum<br>
+Check Viscosity<br>
+After viscosity 355 and check after one minute check viscosity 355 or 350 is acceptable<br>
+Pass the material 120 mesh<br>
+The mold wash dry and mold deep to water and after one minute dry mold<br><br>
+
+<strong>Gujarati:</strong><br>
+600 ગ્રામ સામગ્રી<br>
+ઘનતા 1300<br>
+સામગ્રી મુક્ત પ્રવાહ નથી, સોડિયમ સિલિકેટ ઉમેરો<br>
+સોડિયમ સિલિકેટ ડ્રોપ મહત્તમ 12 છે<br>
+સ્નિગ્ધતા તપાસો<br>
+સ્નિગ્ધતા 355 પછી અને એક મિનિટ પછી તપાસો કે સ્નિગ્ધતા 355 અથવા 350 સ્વીકાર્ય છે<br>
+સામગ્રી 120 મેશ પસાર કરો<br>
+મોલ્ડને સૂકવીને પાણીમાં ઊંડે સુધી ધોઈ લો અને એક મિનિટ પછી મોલ્ડને સૂકવો`,
         materials: [
             "1 Liter Beaker",
             "10 LITER DOL",
