@@ -708,17 +708,14 @@ function renderGrid(data) {
         const plainDesc = tempDiv.textContent || tempDiv.innerText || '';
 
         col.innerHTML = `
-            <div class="method-card" onclick="showMethodDetail(${method.id})" style="cursor: pointer;">
-                <div class="img-wrapper mx-auto mb-3">
+            <div class="method-card" onclick="showMethodDetail(${method.id})">
+                <div class="img-wrapper">
                     <img src="${imageUrl}" alt="${method.title}" loading="lazy">
-                    <div class="img-overlay">
-                        <i class="fa-solid fa-eye fa-2x mb-2"></i>
-                        <span class="fw-bold">View Details</span>
-                        <div class="overlay-desc">${plainDesc.substring(0, 100)}...</div>
-                    </div>
                 </div>
-                <div class="category-text text-muted small text-uppercase mb-1 fw-bold">Method</div>
-                <h6 class="fw-bold text-dark text-uppercase px-2" style="font-size: 0.9rem;">${method.title}</h6>
+                <div class="card-category">Procedure</div>
+                <h6 class="card-title">${method.title}</h6>
+                <div class="card-desc">${plainDesc.substring(0, 80)}...</div>
+                <button class="view-btn mt-auto">View Method &rarr;</button>
             </div>
         `;
 
@@ -780,20 +777,17 @@ function showMethodDetail(id, updateHash = true) {
         if (method.materials && method.materials.length > 0) {
             method.materials.forEach((material, index) => {
                 const li = document.createElement('li');
-                li.style.display = 'flex';
-                li.style.alignItems = 'center';
-                li.style.marginBottom = '16px';
 
                 // Using custom image if provided, otherwise placeholder
                 const matImage = (method.materialImages && method.materialImages[index]) ? method.materialImages[index] : `https://picsum.photos/seed/mat${method.id}_${index}/100/100`;
                 li.innerHTML = `
-                    <img src="${matImage}" alt="Material" style="width: 80px; height: 80px; border-radius: 8px; margin-right: 16px; object-fit: contain; border: 1px solid #ddd; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); padding: 4px;">
-                    <span style="font-size: 1rem; color: #444; font-weight: 500;">${material}</span>
+                    <img src="${matImage}" alt="Material">
+                    <span>${material}</span>
                 `;
                 materialsList.appendChild(li);
             });
         } else {
-            materialsList.innerHTML = '<li style="color: #555; font-size: 0.95rem;">Standard lab equipment</li>';
+            materialsList.innerHTML = '<li><i class="fa-solid fa-flask"></i> Standard lab equipment</li>';
         }
     }
 
@@ -847,9 +841,72 @@ function showMethodDetail(id, updateHash = true) {
         longDescHTML += `<strong>Document History:</strong><br><div class="table-responsive mt-2">${historyData}</div><br>`;
     }
 
-    const methodLongDesc = document.getElementById('methodLongDesc');
-    if (methodLongDesc) {
-        methodLongDesc.innerHTML = longDescHTML;
+    // --- NEW PARSER FOR BILINGUAL & STEP CARDS --- //
+    let enOutput = '';
+    let guOutput = '';
+    let currentLang = 'en'; // default
+    let hasGujarati = false;
+
+    let lines = longDescHTML.split(/<br\s*\/?>/i).map(l => l.trim()).filter(l => l.length > 0);
+    
+    lines.forEach(line => {
+        if(line.includes('<strong>English:</strong>') || line.includes('<strong>English :</strong>')) {
+            currentLang = 'en';
+            return; // skip the label
+        }
+        if(line.includes('<strong>Gujarati:</strong>') || line.includes('<strong>Gujarati :</strong>')) {
+            currentLang = 'gu';
+            hasGujarati = true;
+            return; // skip the label
+        }
+        
+        // If it's a heading, we want it in both languages!
+        if(line.startsWith('<h5') || line.startsWith('<h4')) {
+            enOutput += `${line}<br>`;
+            guOutput += `${line}<br>`;
+            return;
+        }
+
+        if(currentLang === 'en') enOutput += line + '<br>';
+        if(currentLang === 'gu') guOutput += line + '<br>';
+    });
+
+    function formatToSteps(htmlStr) {
+        if(!htmlStr) return '';
+        if(htmlStr.includes('<table') || htmlStr.includes('<div style="text-align: center;')) return `<div class="desc-content">${htmlStr}</div>`;
+        
+        let pLines = htmlStr.split(/<br\s*\/?>/i).map(l => l.trim()).filter(l => l.length > 0);
+        let stepCount = 1;
+        let output = '';
+        
+        pLines.forEach(line => {
+            if(line.startsWith('<div') || line.startsWith('<h') || (line.startsWith('<strong>') && line.endsWith('</strong>') && line.length < 50)) {
+                output += `<div class="mt-4 mb-3">${line}</div>`;
+                stepCount = 1; // reset step counter on new section header
+            } else {
+                output += `
+                <div class="step-card">
+                    <div class="step-number">${stepCount++}</div>
+                    <div class="step-content">${line}</div>
+                </div>`;
+            }
+        });
+        return output;
+    }
+
+    const methodLongDescEn = document.getElementById('methodLongDescEn');
+    const methodLongDescGu = document.getElementById('methodLongDescGu');
+    const langTabs = document.querySelector('.language-tabs');
+
+    if (methodLongDescEn) methodLongDescEn.innerHTML = formatToSteps(enOutput);
+    if (methodLongDescGu) methodLongDescGu.innerHTML = formatToSteps(guOutput);
+
+    if (!hasGujarati && langTabs) {
+        langTabs.style.display = 'none';
+    } else if (langTabs) {
+        langTabs.style.display = 'flex';
+        // Reset to English tab active
+        switchLanguage('en');
     }
 
     // Toggle Views
@@ -859,4 +916,23 @@ function showMethodDetail(id, updateHash = true) {
 
     // Refresh AOS
     setTimeout(() => AOS.refresh(), 50);
+}
+
+// Language Switcher
+window.switchLanguage = function(lang) {
+    const enContent = document.getElementById('methodLongDescEn');
+    const guContent = document.getElementById('methodLongDescGu');
+    const tabs = document.querySelectorAll('.lang-tab');
+
+    if (lang === 'en') {
+        enContent.classList.remove('d-none');
+        guContent.classList.add('d-none');
+        tabs[0].classList.add('active');
+        tabs[1].classList.remove('active');
+    } else {
+        enContent.classList.add('d-none');
+        guContent.classList.remove('d-none');
+        tabs[0].classList.remove('active');
+        tabs[1].classList.add('active');
+    }
 }

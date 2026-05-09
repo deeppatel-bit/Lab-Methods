@@ -18,11 +18,19 @@
 <body>
 
     <!-- Header -->
-    <nav class="navbar main-nav sticky-top py-3">
-        <div class="container">
-            <a class="navbar-brand fw-bold title-font fs-4" href="#" onclick="showHome(event)">
-                Lab Testing Methods
+    <nav class="navbar main-nav sticky-top py-3 glass-nav">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+            <a class="navbar-brand fw-bold title-font fs-4 d-flex align-items-center gap-2" href="#" onclick="showHome(event)">
+                <i class="fa-solid fa-flask-vial text-primary"></i> Lab Methods
             </a>
+            <div class="nav-search-wrapper mt-3 mt-md-0">
+                <div class="input-group search-container glass-search">
+                    <span class="input-group-text bg-transparent border-0 text-muted" id="search-addon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <input type="text" id="searchInput" class="form-control border-0 ps-0 text-secondary" placeholder="Search procedures...">
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -31,14 +39,9 @@
 
         <!-- Home Section -->
         <section id="home-section" class="fade-in">
-            <div data-aos="fade-down" class="text-center mb-5">
-                <h1 class="fw-bold mb-3 method-title">OUR METHODS</h1>
-                <div class="input-group search-container p-1 mx-auto" style="max-width: 500px;">
-                    <span class="input-group-text bg-transparent border-0 text-muted" id="search-addon">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </span>
-                    <input type="text" id="searchInput" class="form-control border-0 ps-0 text-secondary" placeholder="Search methods...">
-                </div>
+            <div data-aos="fade-down" class="text-center mb-5 hero-section">
+                <h1 class="fw-bold mb-3 method-title gradient-text">Industrial Lab Testing Methods</h1>
+                <p class="text-muted hero-subtitle mx-auto">Comprehensive standard operating procedures and quality testing protocols for precise analysis.</p>
             </div>
 
             <div class="row justify-content-center px-lg-3" id="methodsGrid" style="row-gap: 4rem;">
@@ -49,50 +52,60 @@
         <!-- Method Detail Section -->
         <section id="detail-section" class="d-none fade-in">
             
-            <!-- Top Row: Image & Short Details -->
-            <div class="row g-5 align-items-center mb-5">
-                <!-- Left Image -->
-                <div class="col-lg-5 text-center" data-aos="fade-right">
-                    <div class="detail-img-wrapper mx-auto">
-                        <img id="detailImage" src="" alt="Detail Image" loading="lazy">
+            <div class="mb-4">
+                <button class="btn btn-link text-muted text-decoration-none px-0" onclick="showHome(event)">
+                    <i class="fa-solid fa-arrow-left me-2"></i> Back to Dashboard
+                </button>
+            </div>
+
+            <!-- Compact Detail Hero -->
+            <div class="detail-hero-card mb-4 p-4 p-md-5">
+                <div class="row align-items-center">
+                    <div class="col-md-3 text-center mb-4 mb-md-0">
+                        <div class="detail-img-wrapper">
+                            <img id="detailImage" src="" alt="Detail Image" loading="lazy">
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Right Content Area -->
-                <div class="col-lg-7" data-aos="fade-left">
-                    <h1 id="methodTitle" class="method-title mb-1">METHOD TITLE</h1>
-                    <div class="method-category" id="methodCategory">CATEGORY: Lab Testing Procedure</div>
-                    
-                    <div class="mb-4 text-muted" style="font-size: 0.95rem; line-height: 1.6;" id="methodShortDesc">
-                        <!-- Short objective/description goes here -->
+                    <div class="col-md-9 ps-md-4">
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <span class="method-badge bg-primary-subtle text-primary"><i class="fa-solid fa-flask"></i> <span id="methodCategory">Procedure</span></span>
+                            <span class="method-badge bg-success-subtle text-success"><i class="fa-solid fa-layer-group"></i> Industrial Standard</span>
+                            <span class="method-badge bg-warning-subtle text-warning"><i class="fa-regular fa-clock"></i> 30-45 Mins</span>
+                        </div>
+                        <h1 id="methodTitle" class="detail-title mb-3">METHOD TITLE</h1>
+                        <p class="text-muted mb-0" id="methodShortDesc" style="font-size: 1.05rem;"></p>
                     </div>
-
-                    <div class="features-title">FEATURES & MATERIALS:</div>
-                    <ul class="features-list mb-4" id="methodMaterials">
-                        <!-- Materials go here -->
-                    </ul>
-
-
                 </div>
             </div>
 
-            <!-- Bottom Description Tab -->
-            <div class="desc-tab-container" data-aos="fade-up">
-                <div class="desc-tab-header">Description</div>
-                <div class="desc-tab-body">
-                    <div class="row g-5">
-                        <div class="col-12 desc-content" id="methodLongDesc">
-                            <!-- All detailed content (Procedure, Reagents, etc) goes here -->
-                        </div>
+            <!-- Horizontal Materials Section -->
+            <div class="materials-section mb-5" data-aos="fade-up">
+                <h5 class="section-title"><i class="fa-solid fa-toolbox me-2"></i> Required Equipment & Materials</h5>
+                <div class="materials-scroll-container">
+                    <ul class="features-list" id="methodMaterials">
+                        <!-- Materials injected via JS -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Procedure & Description Section -->
+            <div class="procedure-section" data-aos="fade-up">
+                <!-- Language Switcher -->
+                <div class="language-tabs mb-4">
+                    <button class="lang-tab active" onclick="switchLanguage('en')">English</button>
+                    <button class="lang-tab" onclick="switchLanguage('gu')">Gujarati</button>
+                </div>
+
+                <div class="desc-tab-container p-4 p-md-5">
+                    <div id="methodLongDescEn" class="lang-content">
+                        <!-- English Step-by-Step UI injected via JS -->
+                    </div>
+                    <div id="methodLongDescGu" class="lang-content d-none">
+                        <!-- Gujarati Step-by-Step UI injected via JS -->
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-5 pt-3">
-                <button class="btn btn-outline-secondary px-4 py-2" onclick="showHome(event)">
-                    <i class="fa-solid fa-arrow-left me-2"></i> Back to Methods
-                </button>
-            </div>
         </section>
 
     </main>
