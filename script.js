@@ -588,24 +588,20 @@ CASTING 12MM આવી જોઈએ.<br><br>
 
 <h5 class="mt-4 text-primary border-bottom pb-2">Method 2</h5>
 <strong>English:</strong><br>
-600 gm material<br>
-Density 1300<br>
-Material is not free flow add sodium silicate<br>
-Sodium silicate drop is 12 maximum<br>
-Check Viscosity<br>
-After viscosity 355 and check after one minute check viscosity 355 or 350 is acceptable<br>
-Pass the material 120 mesh<br>
-The mold wash dry and mold deep to water and after one minute dry mold<br><br>
+FIRST TAKE 600 GRAMS OF MATERIAL AND ADD 600ML WATER IN IT.<br>
+THEN MIX IN IT IN THE JUICER AFTER MIXING, CHECK ITS DENSITY THE STANDARD DENSITY SHOULD BE 1300.<br>
+THE VISCOSITY 355 IS REQUIRED. IF THE VISCOSITY DOES NOT REACH 355 THEN ADD SODIUM SILICATE TO IT. AFTER THE VISCOSITY REACHES 355, NEED TO WAIT FOR EXACT 1 MINUTE TO RETEST THE READING. DIFFERENCE OF 5 IS ACCEPTABLE. OTHERWISE NEED TO ADD SILICATE.<br>
+AFTER EACH TEST NEED TO WASH THE WEIGHT AND CUP PROPERLY.<br>
+AFTER THAT PASS THE MATERIAL THROUGH 120 MESH. AFTER THAT WASH THE MOLD AND LET IT DRY FOR 1 MINUTE.<br>
+THEN PUT THE MATERIAL IN TO THE MOLD. THEN TAKE OUT THE MATERIAL AFTER 10 MINUTES. THEN CHECK THE CASTING AFTER 10 MINUTES.<br>
 
 <strong>Gujarati:</strong><br>
-600 ગ્રામ સામગ્રી<br>
-ઘનતા 1300<br>
-સામગ્રી મુક્ત પ્રવાહ નથી, સોડિયમ સિલિકેટ ઉમેરો<br>
-સોડિયમ સિલિકેટ ડ્રોપ મહત્તમ 12 છે<br>
-સ્નિગ્ધતા તપાસો<br>
-સ્નિગ્ધતા 355 પછી અને એક મિનિટ પછી તપાસો કે સ્નિગ્ધતા 355 અથવા 350 સ્વીકાર્ય છે<br>
-સામગ્રી 120 મેશ પસાર કરો<br>
-મોલ્ડને સૂકવીને પાણીમાં ઊંડે સુધી ધોઈ લો અને એક મિનિટ પછી મોલ્ડને સૂકવો`,
+પહેલા ૬૦૦ ગ્રામ સામગ્રી લો અને તેમાં ૬૦૦ મિલી પાણી ઉમેરો.<br>
+પછી તેને જ્યુસરમાં મિક્સ કરો, મિશ્રણ કર્યા પછી, તેની ઘનતા તપાસો કે પ્રમાણભૂત ઘનતા ૧૩૦૦ હોવી જોઈએ.<br>
+સ્નિગ્ધતા ૩૫૫ જરૂરી છે. જો સ્નિગ્ધતા ૩૫૫ સુધી ન પહોંચે તો તેમાં સોડિયમ સિલિકેટ ઉમેરો. સ્નિગ્ધતા ૩૫૫ સુધી પહોંચ્યા પછી, વાંચન ફરીથી કરવા માટે બરાબર ૧ મિનિટ રાહ જોવી પડશે. ૫ નો તફાવત સ્વીકાર્ય છે. અન્યથા સિલિકેટ ઉમેરવાની જરૂર છે.<br>
+દરેક પરીક્ષણ પછી વજન અને કપને યોગ્ય રીતે ધોવાની જરૂર છે.<br>
+તે પછી સામગ્રીને ૧૨૦ મેશમાંથી પસાર કરો. ત્યારબાદ મોલ્ડને ધોઈ લો અને ૧ મિનિટ સુધી સુકાવા દો.<br>
+પછી મોલ્ડમાં મટિરિયલ નાખો. પછી ૧૦ મિનિટ પછી મટિરિયલ બહાર કાઢો. પછી ૧૦ મિનિટ પછી મોલ્ડિંગ ચેક કરો.`,
         materials: [
             "1 Liter Beaker",
             "10 LITER DOL",
@@ -792,114 +788,111 @@ function showMethodDetail(id, updateHash = true) {
     }
 
     // Construct the Long Description HTML for the bottom section
-    let longDescHTML = '';
-
-    if (method.description) {
-        longDescHTML += `${method.description}<br><br>`;
-    }
-    if (method.reagents && method.reagents !== "Not applicable.") {
-        longDescHTML += `${method.reagents}<br><br>`;
-    }
-
-    if (method.samplePreparation && method.samplePreparation.length > 0) {
-        longDescHTML += `<strong>Sample Preparation:</strong><br><ul style="padding-left:1rem;">`;
-        method.samplePreparation.forEach(s => longDescHTML += `<li>${s}</li>`);
-        longDescHTML += `</ul><br>`;
-    }
-
-    if (method.calibration && method.calibration.length > 0) {
-        longDescHTML += `<strong>Calibration:</strong><br><ul style="padding-left:1rem;">`;
-        method.calibration.forEach(s => longDescHTML += `<li>${s}</li>`);
-        longDescHTML += `</ul><br>`;
-    }
-
-    if (method.procedure && method.procedure.length > 0) {
-        longDescHTML += `<strong>Procedure:</strong><br><ol style="padding-left:1.5rem;">`;
-        method.procedure.forEach(s => longDescHTML += `<li>${s}</li>`);
-        longDescHTML += `</ol><br>`;
-    }
-
-    const formulaData = method.formula || method.calculations;
-    if (formulaData && formulaData !== "NA" && formulaData !== "Not applicable.") {
-        longDescHTML += `${formulaData}<br><br>`;
-    }
-
-    if (method.results) {
-        longDescHTML += `<strong>Results:</strong><br>${method.results}<br><br>`;
-    }
-
-    if (method.precautions) {
-        longDescHTML += `<strong>Precautions:</strong><br>${method.precautions}<br><br>`;
-    }
-
-    if (method.notes) {
-        longDescHTML += `<strong>Notes:</strong><br>${method.notes}<br><br>`;
-    }
-
-    const historyData = method.documentHistory || method.history;
-    if (historyData) {
-        longDescHTML += `<strong>Document History:</strong><br><div class="table-responsive mt-2">${historyData}</div><br>`;
-    }
-
-    // --- NEW PARSER FOR BILINGUAL & STEP CARDS --- //
     let enOutput = '';
     let guOutput = '';
-    let currentLang = 'en'; // default
     let hasGujarati = false;
 
-    let lines = longDescHTML.split(/<br\s*\/?>/i).map(l => l.trim()).filter(l => l.length > 0);
-    
-    lines.forEach(line => {
-        if(line.includes('<strong>English:</strong>') || line.includes('<strong>English :</strong>')) {
-            currentLang = 'en';
-            return; // skip the label
-        }
-        if(line.includes('<strong>Gujarati:</strong>') || line.includes('<strong>Gujarati :</strong>')) {
-            currentLang = 'gu';
-            hasGujarati = true;
-            return; // skip the label
-        }
-        
-        // If it's a heading, we want it in both languages!
-        if(line.startsWith('<h5') || line.startsWith('<h4')) {
-            enOutput += `${line}<br>`;
-            guOutput += `${line}<br>`;
-            return;
-        }
+    function appendToBoth(html) {
+        if (!html) return;
+        enOutput += html;
+        guOutput += html;
+    }
 
-        if(currentLang === 'en') enOutput += line + '<br>';
-        if(currentLang === 'gu') guOutput += line + '<br>';
-    });
+    // 1. Description (Bilingual or normal text)
+    if (method.description) {
+        let text = method.description;
+        // Split by explicit markers to preserve internal HTML like <br>, \n, <div>
+        let tokens = text.split(/(<h[1-6][^>]*>.*?<\/h[1-6]>|<strong>English\s*:<\/strong>|<br\s*\/?>\s*<strong>English\s*:<\/strong>|<strong>Gujarati\s*:<\/strong>|<br\s*\/?>\s*<strong>Gujarati\s*:<\/strong>)/i);
 
-    function formatToSteps(htmlStr) {
-        if(!htmlStr) return '';
-        if(htmlStr.includes('<table') || htmlStr.includes('<div style="text-align: center;')) return `<div class="desc-content">${htmlStr}</div>`;
-        
-        let pLines = htmlStr.split(/<br\s*\/?>/i).map(l => l.trim()).filter(l => l.length > 0);
-        let stepCount = 1;
-        let output = '';
-        
-        pLines.forEach(line => {
-            if(line.startsWith('<div') || line.startsWith('<h') || (line.startsWith('<strong>') && line.endsWith('</strong>') && line.length < 50)) {
-                output += `<div class="mt-4 mb-3">${line}</div>`;
-                stepCount = 1; // reset step counter on new section header
+        let currentLang = 'en';
+
+        tokens.forEach(token => {
+            if (!token) return;
+
+            if (token.match(/<strong>English\s*:<\/strong>/i)) {
+                currentLang = 'en';
+            } else if (token.match(/<strong>Gujarati\s*:<\/strong>/i)) {
+                currentLang = 'gu';
+                hasGujarati = true;
+            } else if (token.match(/^<h[1-6]/i)) {
+                enOutput += `<div class="mt-4 mb-2">${token}</div>`;
+                guOutput += `<div class="mt-4 mb-2">${token}</div>`;
             } else {
-                output += `
-                <div class="step-card">
-                    <div class="step-number">${stepCount++}</div>
-                    <div class="step-content">${line}</div>
-                </div>`;
+                let formatted = token;
+                if (currentLang === 'en') enOutput += `<div class="desc-content">${formatted}</div>`;
+                if (currentLang === 'gu') guOutput += `<div class="desc-content">${formatted}</div>`;
             }
         });
-        return output;
+    }
+
+    // 2. Reagents
+    if (method.reagents && method.reagents !== "Not applicable.") {
+        appendToBoth(`<div class="mb-4 desc-content">${method.reagents}</div>`);
+    }
+
+    // 3. Sample Preparation
+    if (method.samplePreparation && method.samplePreparation.length > 0) {
+        let html = `<strong>Sample Preparation:</strong><br><ul style="padding-left:1rem;">`;
+        method.samplePreparation.forEach(s => html += `<li>${s}</li>`);
+        html += `</ul><br>`;
+        appendToBoth(`<div class="mb-4 desc-content">${html}</div>`);
+    }
+
+    // 4. Calibration
+    if (method.calibration && method.calibration.length > 0) {
+        let html = `<strong>Calibration:</strong><br><ul style="padding-left:1rem;">`;
+        method.calibration.forEach(s => html += `<li>${s}</li>`);
+        html += `</ul><br>`;
+        appendToBoth(`<div class="mb-4 desc-content">${html}</div>`);
+    }
+
+    // 5. Procedure (Explicitly map to Step Cards!)
+    if (method.procedure && method.procedure.length > 0) {
+        let procHtml = `<h5 class="text-primary mt-4 mb-3">Procedure</h5>`;
+        let stepCount = 1;
+        method.procedure.forEach(s => {
+            procHtml += `
+            <div class="step-card" onclick="this.classList.toggle('step-completed')">
+                <div class="step-number">${stepCount++}</div>
+                <div class="step-content">${s}</div>
+            </div>`;
+        });
+        appendToBoth(procHtml);
+    }
+
+    // 6. Calculations / Formula
+    const formulaData = method.formula || method.calculations;
+    if (formulaData && formulaData !== "NA" && formulaData !== "Not applicable.") {
+        appendToBoth(`<div class="mb-4 desc-content">${formulaData}</div>`);
+    }
+
+    // 7. Results
+    if (method.results) {
+        appendToBoth(`<div class="mb-4 desc-content"><strong>Results:</strong><br>${method.results}</div>`);
+    }
+
+    // 8. Precautions
+    if (method.precautions) {
+        appendToBoth(`<div class="mb-4 desc-content"><strong>Precautions:</strong><br>${method.precautions}</div>`);
+    }
+
+    // 9. Notes
+    if (method.notes) {
+        appendToBoth(`<div class="mb-4 desc-content"><strong>Notes:</strong><br>${method.notes}</div>`);
+    }
+
+    // 10. Document History
+    const historyData = method.documentHistory || method.history;
+    if (historyData) {
+        appendToBoth(`<div class="mb-4 desc-content"><strong>Document History:</strong><br><div class="table-responsive mt-2">${historyData}</div></div>`);
     }
 
     const methodLongDescEn = document.getElementById('methodLongDescEn');
     const methodLongDescGu = document.getElementById('methodLongDescGu');
     const langTabs = document.querySelector('.language-tabs');
 
-    if (methodLongDescEn) methodLongDescEn.innerHTML = formatToSteps(enOutput);
-    if (methodLongDescGu) methodLongDescGu.innerHTML = formatToSteps(guOutput);
+    if (methodLongDescEn) methodLongDescEn.innerHTML = enOutput;
+    if (methodLongDescGu) methodLongDescGu.innerHTML = guOutput;
 
     if (!hasGujarati && langTabs) {
         langTabs.style.display = 'none';
@@ -919,7 +912,7 @@ function showMethodDetail(id, updateHash = true) {
 }
 
 // Language Switcher
-window.switchLanguage = function(lang) {
+window.switchLanguage = function (lang) {
     const enContent = document.getElementById('methodLongDescEn');
     const guContent = document.getElementById('methodLongDescGu');
     const tabs = document.querySelectorAll('.lang-tab');
